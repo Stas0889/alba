@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>История парка Альба Несвиж | От XVI века до наших дней</title>
+<meta name="description" content="История парка Альба в Несвиже — от итальянского ренессанса XVI века до волонтёрского возрождения. Радзивиллы, первый зоопарк Беларуси, 800 000 ламп для короля.">
+<meta name="keywords" content="история парка альба несвиж, радзивиллы альба, альба лонга несвиж, несвижский парк история">
+<meta property="og:title" content="История парка Альба — от XVI века до наших дней">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+@font-face {
+  font-family: 'Arkhip';
+  src: url('Arkhip-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green: #2E402A; --green-btn: #2D4126; --green-hover: #3D5635;
+  --bg: #EEEADF; --card-bg: #F5F2EB; --text: #232323;
+  --muted: #495547; --accent: #C4A35A; --border: #D4CFC4;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+
+/* NAV */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 2.5rem; height: 60px; display: flex; align-items: center; justify-content: space-between; background: #EEEADF; background: rgba(238,234,223,0.97); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); transition: box-shadow 0.3s; }
+.nav__logo { font-family: 'Arkhip', sans-serif; font-size: 1rem; color: #2E402A !important; text-decoration: none; letter-spacing: 0.05em; }
+.nav__links { display: flex; gap: 2rem; list-style: none; }
+.nav__links a { font-size: 0.875rem; color: var(--muted); text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
+.nav__links a:hover, .nav__links a.active { color: var(--green); font-weight: 500; }
+.nav__lang { display: flex; gap: 0.375rem; }
+.nav__lang button { background: none; border: none; font-family: 'Inter', sans-serif; font-size: 0.78rem; color: var(--muted); cursor: pointer; padding: 3px 8px; border-radius: 4px; transition: all 0.2s; }
+.nav__lang button.active, .nav__lang button:hover { background: var(--green); color: #fff; }
+
+/* HERO */
+.hero { padding-top: 60px; background: var(--bg); }
+.hero__inner { max-width: 1100px; margin: 0 auto; padding: 5rem 2.5rem 0; }
+.hero__eyebrow { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.25rem; font-weight: 500; }
+.hero__title { font-family: 'Arkhip', sans-serif; font-size: clamp(2rem, 5vw, 3.75rem); color: var(--green); line-height: 1.1; letter-spacing: -0.01em; max-width: 820px; margin-bottom: 1.5rem; }
+.hero__sub { font-size: 1.05rem; color: var(--muted); line-height: 1.75; max-width: 640px; font-weight: 300; margin-bottom: 3rem; }
+.hero__img { width: 100%; height: 55vh; object-fit: cover; object-position: center bottom; display: block; margin-top: 3rem; }
+
+/* BUTTONS */
+.btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.75rem 1.5rem; border-radius: 5px; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 500; text-decoration: none; letter-spacing: 0.03em; cursor: pointer; transition: all 0.25s; border: none; white-space: nowrap; }
+.btn--primary { background: var(--green-btn); color: #F5F2EB; }
+.btn--primary:hover { background: var(--green-hover); transform: translateY(-1px); }
+.btn--outline { background: transparent; color: var(--green); border: 1px solid var(--green); }
+.btn--outline:hover { background: var(--green); color: #F5F2EB; }
+.btn--light { background: #F5F2EB; color: var(--green); }
+.btn--light:hover { background: #fff; transform: translateY(-1px); }
+
+/* CHAPTER NAV */
+.chapter-nav { background: var(--card-bg); border-bottom: 1px solid var(--border); position: sticky; top: 60px; z-index: 90; }
+.chapter-nav__inner { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; display: flex; gap: 0; overflow-x: auto; scrollbar-width: none; }
+.chapter-nav__inner::-webkit-scrollbar { display: none; }
+.chapter-nav__item { flex-shrink: 0; padding: 1rem 1.5rem; font-size: 0.8rem; color: var(--muted); text-decoration: none; border-bottom: 2px solid transparent; transition: all 0.2s; white-space: nowrap; letter-spacing: 0.02em; }
+.chapter-nav__item:hover, .chapter-nav__item.active { color: var(--green); border-bottom-color: var(--accent); }
+
+/* CHAPTER */
+.chapter { padding: 6rem 2.5rem; }
+.chapter:nth-child(even) { background: var(--card-bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.chapter__inner { max-width: 1100px; margin: 0 auto; }
+.chapter__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.chapter__grid--reverse { direction: rtl; }
+.chapter__grid--reverse > * { direction: ltr; }
+.chapter__meta { margin-bottom: 2rem; }
+.chapter__period { font-family: 'Arkhip', sans-serif; font-size: 3rem; color: var(--accent); line-height: 1; margin-bottom: 0.5rem; opacity: 0.6; }
+.chapter__eyebrow { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 0.75rem; }
+.chapter__title { font-family: 'Arkhip', sans-serif; font-size: clamp(1.5rem, 2.5vw, 2.2rem); color: var(--green); line-height: 1.2; margin-bottom: 1rem; }
+.chapter__subtitle { font-size: 0.9rem; color: var(--muted); font-style: italic; margin-bottom: 1.5rem; }
+.divider { width: 36px; height: 2px; background: var(--accent); margin: 1.25rem 0; }
+.chapter__text p { font-size: 1rem; color: var(--muted); line-height: 1.85; margin-bottom: 1.25rem; }
+.chapter__text p:last-child { margin-bottom: 0; }
+.chapter__text strong { color: var(--text); font-weight: 500; }
+
+/* FACTS INLINE */
+.facts-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2rem 0; }
+.fact-pill { padding: 1.25rem; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; }
+.fact-pill--dark { background: var(--green); border-color: var(--green); }
+.fact-pill__num { font-family: 'Arkhip', sans-serif; font-size: 1.5rem; color: var(--green); line-height: 1; margin-bottom: 0.3rem; }
+.fact-pill--dark .fact-pill__num { color: var(--accent); }
+.fact-pill__label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; line-height: 1.4; }
+.fact-pill--dark .fact-pill__label { color: rgba(245,242,235,0.6); }
+
+/* CHAPTER IMAGE */
+.chapter__img-wrap { position: relative; }
+.chapter__img { width: 100%; border-radius: 8px; display: block; object-fit: cover; }
+.chapter__img--tall { aspect-ratio: 3/4; }
+.chapter__img--wide { aspect-ratio: 4/3; }
+.chapter__img-caption { margin-top: 0.75rem; font-size: 0.75rem; color: var(--muted); font-style: italic; line-height: 1.5; }
+.chapter__img-badge { position: absolute; bottom: 1.5rem; right: -1.5rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.875rem 1.1rem; font-size: 0.78rem; color: var(--muted); max-width: 180px; line-height: 1.5; box-shadow: 0 4px 20px rgba(46,64,42,0.08); }
+.chapter__img-badge strong { display: block; font-family: 'Arkhip', sans-serif; font-size: 0.9rem; color: var(--green); margin-bottom: 0.2rem; }
+
+/* QUOTE */
+.chapter__quote { border-left: 3px solid var(--accent); padding: 1.25rem 1.5rem; margin: 2rem 0; background: var(--bg); border-radius: 0 6px 6px 0; }
+.chapter__quote p { font-size: 0.95rem; color: var(--text); line-height: 1.7; font-style: italic; margin: 0; }
+.chapter__quote cite { display: block; margin-top: 0.75rem; font-size: 0.78rem; color: var(--muted); font-style: normal; letter-spacing: 0.04em; }
+
+/* EVENTS LIST */
+.events { display: flex; flex-direction: column; gap: 0; margin: 2rem 0; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.event { display: grid; grid-template-columns: 90px 1fr; border-bottom: 1px solid var(--border); }
+.event:last-child { border-bottom: none; }
+.event__year { padding: 1.1rem; background: var(--card-bg); border-right: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-family: 'Arkhip', sans-serif; font-size: 0.875rem; color: var(--green); text-align: center; }
+.event__body { padding: 1.1rem 1.5rem; }
+.event__title { font-size: 0.875rem; font-weight: 500; color: var(--text); margin-bottom: 0.2rem; }
+.event__desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+/* TODAY SECTION */
+.today { background: var(--bg); padding: 6rem 2.5rem; }
+.today__inner { max-width: 1100px; margin: 0 auto; }
+.today__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; }
+.today__card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.today__card-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+.today__card-body { padding: 1.5rem; }
+.today__card-title { font-family: 'Arkhip', sans-serif; font-size: 1rem; color: var(--green); margin-bottom: 0.6rem; }
+.today__card-text { font-size: 0.875rem; color: var(--muted); line-height: 1.7; }
+
+/* CTA */
+.cta { background: var(--green); padding: 5rem 2.5rem; position: relative; overflow: hidden; }
+.cta::before { content: 'АЛЬБА'; position: absolute; right: -2rem; top: 50%; transform: translateY(-50%); font-family: 'Arkhip', sans-serif; font-size: 12rem; color: rgba(255,255,255,0.04); pointer-events: none; letter-spacing: -0.05em; line-height: 1; }
+.cta__inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.cta__eyebrow { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; font-weight: 500; }
+.cta__title { font-family: 'Arkhip', sans-serif; font-size: clamp(1.75rem, 3vw, 2.5rem); color: #F5F2EB; line-height: 1.2; margin-bottom: 1.25rem; }
+.cta__text { font-size: 0.95rem; color: rgba(245,242,235,0.65); line-height: 1.75; margin-bottom: 2rem; }
+.cta__cards { display: flex; flex-direction: column; gap: 0.75rem; }
+.cta__card { display: flex; align-items: center; gap: 1rem; padding: 1.1rem 1.5rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; text-decoration: none; transition: background 0.2s; }
+.cta__card:hover { background: rgba(255,255,255,0.09); }
+.cta__card-icon { width: 34px; height: 34px; border-radius: 50%; background: rgba(196,163,90,0.15); border: 1px solid rgba(196,163,90,0.35); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent); }
+.cta__card-icon svg { width: 16px; height: 16px; }
+.cta__card-title { font-size: 0.875rem; font-weight: 500; color: #F5F2EB; margin-bottom: 0.1rem; }
+.cta__card-desc { font-size: 0.75rem; color: rgba(245,242,235,0.5); }
+
+/* FOOTER */
+footer { background: #1a2918; padding: 4rem 2.5rem 2.5rem; color: rgba(245,242,235,0.55); }
+.footer__inner { max-width: 1100px; margin: 0 auto; }
+.footer__top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 2rem; }
+.footer__logo { font-family: 'Arkhip', sans-serif; font-size: 1.4rem; color: #F5F2EB; margin-bottom: 0.75rem; display: block; text-decoration: none; }
+.footer__about { font-size: 0.85rem; line-height: 1.7; max-width: 320px; }
+.footer__heading { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.25rem; font-weight: 500; }
+.footer__links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.footer__links a { font-size: 0.875rem; color: rgba(245,242,235,0.55); text-decoration: none; transition: color 0.2s; }
+.footer__links a:hover { color: #F5F2EB; }
+.footer__bottom { display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; }
+.footer__social { display: flex; gap: 1rem; }
+.footer__social a { color: rgba(245,242,235,0.4); text-decoration: none; font-size: 0.8rem; transition: color 0.2s; }
+.footer__social a:hover { color: var(--accent); }
+
+/* LANG */
+.lang-content { display: none; }
+.lang-content.active { display: block; }
+span.lang-content { display: none; }
+span.lang-content.active { display: inline; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .chapter__grid, .chapter__grid--reverse, .cta__inner, .today__grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .chapter__grid--reverse { direction: ltr; }
+  .chapter__img-badge { right: 0; }
+  .facts-row { grid-template-columns: 1fr 1fr; }
+  .footer__top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .nav { padding: 0 1.25rem; }
+  .nav__links { display: none; }
+  .hero__inner, .chapter, .today, .cta { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .chapter__period { font-size: 2rem; }
+  .facts-row { grid-template-columns: 1fr; }
+  .event { grid-template-columns: 70px 1fr; }
+  .footer__top { grid-template-columns: 1fr; gap: 2rem; }
+  .footer__bottom { flex-direction: column; gap: 1rem; text-align: center; }
+}
+
+/* ── OVERFLOW FIX ── */
+html,body{max-width:100vw;overflow-x:hidden;}
+/* ── MOBILE BURGER ── */
+.nav__burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;cursor:pointer;padding:4px;background:none;border:none;}
+.nav__burger span{display:block;width:22px;height:2px;background:var(--green);border-radius:2px;transition:all .25s;transform-origin:center;}
+.nav__burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav__burger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.nav__burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+@media(max-width:768px){.nav__burger{display:flex;}.nav__links{display:none!important;}}
+
+/* ── MOBILE MENU ── */
+.mob-menu{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;width:100%;max-width:100vw;background:var(--bg);z-index:99;overflow-y:auto;overflow-x:hidden;padding:0 0 4rem;}
+.mob-menu.open{display:block;}
+.mob-menu__links{display:flex;flex-direction:column;border-top:1px solid var(--border);padding:0 1.5rem;}
+.mob-menu__links a{font-size:1.05rem;color:var(--text);text-decoration:none;padding:1rem 0;border-bottom:1px solid var(--border);transition:color .2s;}
+.mob-menu__links a:hover,.mob-menu__links a.active{color:var(--green);}
+.mob-menu__bottom{padding:1.5rem 1.5rem 0;display:flex;flex-direction:column;gap:1rem;}
+.mob-menu__contacts{display:flex;flex-direction:column;gap:.6rem;}
+.mob-menu__contacts a{font-size:.9rem;color:var(--muted);text-decoration:none;}
+.mob-menu__contacts a:hover{color:var(--green);}
+.mob-menu__lang{display:flex;gap:.5rem;}
+.mob-menu__lang button{padding:.5rem 1.25rem;border-radius:4px;border:1px solid var(--border);background:none;font-family:'Inter',sans-serif;font-size:.875rem;color:var(--muted);cursor:pointer;transition:all .2s;}
+.mob-menu__lang button.active{background:var(--green);color:#fff;border-color:var(--green);}
+
+/* ── SHARE POPUP ── */
+.share-popup{display:none;position:fixed;inset:0;z-index:200;align-items:center;justify-content:center;background:rgba(0,0,0,.45);padding:1.5rem;}
+.share-popup.open{display:flex;}
+.share-popup__box{background:var(--card-bg);border-radius:12px;padding:2rem;width:100%;max-width:420px;box-shadow:0 20px 60px rgba(0,0,0,.2);}
+.share-popup__title{font-family:'Arkhip',sans-serif;font-size:1.1rem;color:var(--green);margin-bottom:.4rem;}
+.share-popup__sub{font-size:.83rem;color:var(--muted);line-height:1.55;margin-bottom:1.5rem;}
+.share-popup__socials{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.25rem;}
+.shr-btn{display:flex;align-items:center;gap:.55rem;padding:.7rem .9rem;border-radius:6px;font-size:.83rem;font-weight:500;text-decoration:none;transition:opacity .2s;border:none;cursor:pointer;font-family:'Inter',sans-serif;}
+.shr-btn:hover{opacity:.85;}
+.shr-btn svg{width:17px;height:17px;flex-shrink:0;}
+.shr-vk{background:#0077FF;color:#fff;}
+.shr-tg{background:#26A5E4;color:#fff;}
+.shr-wa{background:#25D366;color:#fff;}
+.shr-cp{background:var(--bg);color:var(--text);border:1px solid var(--border);}
+.share-popup__url-row{display:flex;gap:.5rem;margin-bottom:1rem;}
+.share-popup__url-row input{flex:1;padding:.55rem .8rem;border:1px solid var(--border);border-radius:5px;font-size:.78rem;color:var(--muted);background:var(--bg);font-family:'Inter',sans-serif;min-width:0;}
+.shr-copy-btn{padding:.55rem .9rem;background:var(--green-btn);color:#F5F2EB;border:none;border-radius:5px;font-size:.78rem;font-weight:500;cursor:pointer;white-space:nowrap;font-family:'Inter',sans-serif;transition:background .2s;}
+.shr-copy-btn:hover{background:var(--green-hover);}
+.share-popup__close{text-align:right;}
+.share-popup__close button{background:none;border:none;font-size:.83rem;color:var(--muted);cursor:pointer;font-family:'Inter',sans-serif;}
+.share-popup__close button:hover{color:var(--green);}
+
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav__logo">Альба</a>
+  <ul class="nav__links">
+    <li><a href="history.html" class="active"><span class="lang-content active" data-lang="ru">История</span><span class="lang-content" data-lang="be">Гісторыя</span></a></li>
+    <li><a href="hidden-nesvizh.html"><span class="lang-content active" data-lang="ru">Несвиж без замка</span><span class="lang-content" data-lang="be">Нясвіж без замка</span></a></li>
+    <li><a href="gallery.html"><span class="lang-content active" data-lang="ru">Галерея</span><span class="lang-content" data-lang="be">Галерэя</span></a></li>
+    <li><a href="volunteer.html"><span class="lang-content active" data-lang="ru">Волонтёрам</span><span class="lang-content" data-lang="be">Валанцёрам</span></a></li>
+    <li><a href="how-to-get.html"><span class="lang-content active" data-lang="ru">Как добраться</span><span class="lang-content" data-lang="be">Як дабрацца</span></a></li>
+  </ul>
+    <div style="display:flex;align-items:center;gap:.75rem;">
+    <div class="nav__lang">
+      <button class="active" onclick="setLang('ru')">RU</button>
+      <button onclick="setLang('be')">BE</button>
+    </div>
+    <button class="nav__burger" onclick="toggleMob()" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div id="mob-menu" class="mob-menu">
+  <nav class="mob-menu__links">
+    <a href="index.html"><span class="lang-content active" data-lang="ru">Главная</span><span class="lang-content" data-lang="be">Галоўная</span></a>
+    <a href="history.html"><span class="lang-content active" data-lang="ru">История</span><span class="lang-content" data-lang="be">Гісторыя</span></a>
+    <a href="hidden-nesvizh.html"><span class="lang-content active" data-lang="ru">Несвиж без замка</span><span class="lang-content" data-lang="be">Нясвіж без замка</span></a>
+    <a href="gallery.html"><span class="lang-content active" data-lang="ru">Галерея</span><span class="lang-content" data-lang="be">Галерэя</span></a>
+    <a href="volunteer.html"><span class="lang-content active" data-lang="ru">Волонтёрам</span><span class="lang-content" data-lang="be">Валанцёрам</span></a>
+    <a href="how-to-get.html"><span class="lang-content active" data-lang="ru">Как добраться</span><span class="lang-content" data-lang="be">Як дабрацца</span></a>
+  </nav>
+  <div class="mob-menu__bottom">
+    <div class="mob-menu__contacts">
+      <a href="https://www.instagram.com/alba_neswizh/" target="_blank">Instagram @alba_neswizh</a>
+      <a href="https://vk.com/savealba" target="_blank">VK savealba</a>
+      <a href="https://t.me/alba_poselok_nesvisz" target="_blank">Telegram</a>
+      <a href="tel:+375291984942">+375 29 198-49-42</a>
+    </div>
+    <div class="mob-menu__lang">
+      <button class="active" onclick="setLang('ru');toggleMob()">Русский</button>
+      <button onclick="setLang('be');toggleMob()">Беларускі</button>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__inner">
+    <p class="hero__eyebrow">
+      <span class="lang-content active" data-lang="ru">История · XVI–XXI вв.</span>
+      <span class="lang-content" data-lang="be">Гісторыя · XVI–XXI стст.</span>
+    </p>
+    <h1 class="hero__title">
+      <span class="lang-content active" data-lang="ru">История парка Альба</span>
+      <span class="lang-content" data-lang="be">Гісторыя парку Альба</span>
+    </h1>
+    <p class="hero__sub">
+      <span class="lang-content active" data-lang="ru">Четыре века, четыре Радзивилла, четыре стиля. От итальянского ренессанса до заброшенного леса — и снова к жизни.</span>
+      <span class="lang-content" data-lang="be">Чатыры стагоддзі, чатыры Радзівілы, чатыры стылі. Ад італьянскага Рэнесансу да закінутага лесу — і зноў да жыцця.</span>
+    </p>
+  </div>
+  <img class="hero__img"
+    src="img/alley-summer.webp"
+    alt="Парк Альба — аллея деревьев XVI века, Несвиж">
+</section>
+
+<!-- CHAPTER NAV -->
+<nav class="chapter-nav" aria-label="Главы">
+  <div class="chapter-nav__inner">
+    <a href="#chapter1" class="chapter-nav__item">
+      <span class="lang-content active" data-lang="ru">I. Итальянский ренессанс</span>
+      <span class="lang-content" data-lang="be">I. Італьянскі Рэнесанс</span>
+    </a>
+    <a href="#chapter2" class="chapter-nav__item">
+      <span class="lang-content active" data-lang="ru">II. Французский классицизм</span>
+      <span class="lang-content" data-lang="be">II. Французскі класіцызм</span>
+    </a>
+    <a href="#chapter3" class="chapter-nav__item">
+      <span class="lang-content active" data-lang="ru">III. Маленький Версаль</span>
+      <span class="lang-content" data-lang="be">III. Маленькі Версаль</span>
+    </a>
+    <a href="#chapter4" class="chapter-nav__item">
+      <span class="lang-content active" data-lang="ru">IV. Упадок и война</span>
+      <span class="lang-content" data-lang="be">IV. Заняпад і вайна</span>
+    </a>
+    <a href="#today" class="chapter-nav__item">
+      <span class="lang-content active" data-lang="ru">V. Сегодня</span>
+      <span class="lang-content" data-lang="be">V. Сёння</span>
+    </a>
+  </div>
+</nav>
+
+<!-- CHAPTER 1 -->
+<section class="chapter" id="chapter1">
+  <div class="chapter__inner">
+    <div class="chapter__grid">
+      <div>
+        <div class="chapter__meta">
+          <div class="chapter__period">I</div>
+          <p class="chapter__eyebrow">
+            <span class="lang-content active" data-lang="ru">1580-е — начало XVII века</span>
+            <span class="lang-content" data-lang="be">1580-я — пачатак XVII стагоддзя</span>
+          </p>
+          <h2 class="chapter__title">
+            <span class="lang-content active" data-lang="ru">Итальянский ренессанс. Сиротка строит Альбу</span>
+            <span class="lang-content" data-lang="be">Італьянскі Рэнесанс. Сіротка будуе Альбу</span>
+          </h2>
+          <p class="chapter__subtitle">
+            <span class="lang-content active" data-lang="ru">Николай Христофор Радзивилл Сиротка, 1549–1616</span>
+            <span class="lang-content" data-lang="be">Мікалай Хрыстафор Радзівіл Сіротка, 1549–1616</span>
+          </p>
+        </div>
+        <div class="divider"></div>
+        <div class="chapter__text">
+          <p>
+            <span class="lang-content active" data-lang="ru">Николай Христофор Радзивилл Сиротка назвал своё загородное поместье <strong>Альба</strong> — в честь легендарного города Alba Longa, матери Рима, где по преданию родились Ромул и Рем. Сиротка мечтал создать «второй Рим» в центре Сарматии.</span>
+            <span class="lang-content" data-lang="be">Мікалай Хрыстафор Радзівіл Сіротка назваў сваё загарадное маёнтак <strong>Альба</strong> — у гонар легендарнага горада Alba Longa, маці Рыма, дзе па паданні нарадзіліся Ромул і Рэм.</span>
+          </p>
+          <p>
+            <span class="lang-content active" data-lang="ru">Парк был разбит в итальянском стиле ренессанс — прямоугольные участки, разделённые аллеями, в центре — дворец-эрамитериум (место уединения и молитвы). Архитектором стал итальянец <strong>Джованни Мария Бернардони</strong> — тот же мастер, что построил Фарный костёл в Несвиже.</span>
+            <span class="lang-content" data-lang="be">Парк быў разбіты ў італьянскім стылі Рэнесансу. Архітэктарам стаў італьянец <strong>Джавані Марыя Бернардоні</strong> — той самы майстар, які пабудаваў Фарны касцёл у Нясвіжы.</span>
+          </p>
+          <p>
+            <span class="lang-content active" data-lang="ru">После паломничества на Святую Землю Сиротка привёз в Альбу диковинных животных: <strong>двух леопардов</strong> («лямпартов»), бабуинов («кiнацефалаў») и попугаев. Так появился первый зверинец Беларуси — а возможно, первый зоопарк в Восточной Европе.</span>
+            <span class="lang-content" data-lang="be">Пасля паломніцтва на Святую Зямлю Сіротка прывёз у Альбу дзіўных жывёл: <strong>двух леапардаў</strong>, бабуінаў і папугаяў. Так з'явіўся першы звярынец Беларусі.</span>
+          </p>
+          <p>
+            <span class="lang-content active" data-lang="ru">В 1605 году Сиротка отправлял Льву Сапеге <strong>инжир и дыни</strong>, выращенные в оранжерее Альбы. Итальянский садовник был специально выписан для ухода за экзотическими растениями.</span>
+            <span class="lang-content" data-lang="be">У 1605 годзе Сіротка адпраўляў Льву Сапегу <strong>інжыр і дыні</strong>, вырашчаныя ў аранжарэі Альбы.</span>
+          </p>
+        </div>
+        <div class="chapter__quote">
+          <p>
+            <span class="lang-content active" data-lang="ru">«Несвиж и Альба, поместье и зверинец князя» — подпись на гравюре Томаша Маковского, 1604 год</span>
+            <span class="lang-content" data-lang="be">«Нясвіж і Альба, маёнтак і звярынец князя» — подпіс на гравюры Тамаша Макоўскага, 1604 год</span>
+          </p>
+        </div>
+        <div class="facts-row">
+          <div class="fact-pill">
+            <div class="fact-pill__num">1580-е</div>
+            <div class="fact-pill__label"><span class="lang-content active" data-lang="ru">Год основания</span><span class="lang-content" data-lang="be">Год заснавання</span></div>
+          </div>
+          <div class="fact-pill">
+            <div class="fact-pill__num">2</div>
+            <div class="fact-pill__label"><span class="lang-content active" data-lang="ru">Леопарда в зверинце</span><span class="lang-content" data-lang="be">Леапарды ў звярынцы</span></div>
+          </div>
+          <div class="fact-pill fact-pill--dark">
+            <div class="fact-pill__num">1604</div>
+            <div class="fact-pill__label"><span class="lang-content active" data-lang="ru">Первое изображение</span><span class="lang-content" data-lang="be">Першае выяўленне</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="chapter__img-wrap">
+        <img class="chapter__img chapter__img--tall"
+          src="img/engraving-vid.webp"
+          alt="Гравюра — план парка Альба с системой каналов, Несвиж XVI век">
+        <p class="chapter__img-caption">
+          <span class="lang-content active" data-lang="ru">Реконструкция плана парка Альба. Видна система лучевых аллей и каналов вокруг центрального острова</span>
+          <span class="lang-content" data-lang="be">Рэканструкцыя плана парку Альба. Відна сістэма прамянёвых алей і каналаў вакол цэнтральнай выспы</span>
+        </p>
+        <div class="chapter__img-badge">
+          <strong>Бернардони</strong>
+          <span class="lang-content active" data-lang="ru">тот же архитектор, что строил Фарный костёл</span>
+          <span class="lang-content" data-lang="be">той самы архітэктар, што будаваў Фарны касцёл</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 2 -->
+<section class="chapter" id="chapter2">
+  <div class="chapter__inner">
+    <div class="chapter__grid chapter__grid--reverse">
+      <div>
+        <div class="chapter__meta">
+          <div class="chapter__period">II</div>
+          <p class="chapter__eyebrow">
+            <span class="lang-content active" data-lang="ru">После 1720 года</span>
+            <span class="lang-content" data-lang="be">Пасля 1720 года</span>
+          </p>
+          <h2 class="chapter__title">
+            <span class="lang-content active" data-lang="ru">Французский классицизм. Рыбонька отстраивает заново</span>
+            <span class="lang-content" data-lang="be">Французскі класіцызм. Рыбонька адбудоўвае нанова</span>
+          </h2>
+          <p class="chapter__subtitle">
+            <span class="lang-content active" data-lang="ru">Михаил Казимир Радзивилл Рыбонька и Франциска Урсула</span>
+            <span class="lang-content" data-lang="be">Міхаіл Казімір Радзівіл Рыбонька і Францішка Урсула</span>
+          </p>
+        </div>
+        <div class="divider"></div>
+        <div class="chapter__text">
+          <p>
+            <span class="lang-content active" data-lang="ru">В 1706 году шведские войска разграбили и сожгли Альбу. После смерти Сиротки парк пришёл в запустение. Возрождение началось лишь после 1720 года, когда Альбу унаследовал <strong>Михаил Казимир Радзивилл Рыбонька</strong>.</span>
+            <span class="lang-content" data-lang="be">У 1706 годзе шведскія войскі разрабавалі і спалілі Альбу. Адраджэнне пачалося пасля 1720 года, калі Альбу ўспадкаваў <strong>Міхаіл Казімір Радзівіл Рыбонька</strong>.</span>
+          </p>
+          <p>
+            <span class="lang-content active" data-lang="ru">Парк перестроили в модном тогда <strong>стиле французского классицизма</strong>: система лучевых аллей с видами на водоёмы, регулярная планировка, новый Эрамитериум. Специально изменили русло реки Уши, создали два искусственных острова.</span>
+            <span class="lang-content" data-lang="be">Парк перабудавалі ў модным тады <strong>стылі французскага класіцызму</strong>: сістэма прамянёвых алей, рэгулярная планіроўка. Спецыяльна змянілі рэчышча ракі Ушы.</span>
+          </p>
+          <p>
+            <span class="lang-content active" data-lang="ru">Жена Рыбоньки — <strong>Франциска Урсула Радзивилл</strong> — была первой женщиной-драматургом в истории Великого Княжества Литовского. В Альбе устраивали «зелёные театры»: на газонах разыгрывались пьесы, мягкие кресла стояли прямо на траве, фейерверки освещали ночное небо.</span>
+            <span class="lang-content" data-lang="be"><strong>Францішка Урсула Радзівіл</strong> — першая жанчына-драматург у гісторыі ВКЛ. У Альбе ладзілі «зялёныя тэатры»: на газонах разыгрываліся п'есы пад адкрытым небам.</span>
+          </p>
+          <p>
+            <span class="lang-content active" data-lang="ru">Именно здесь начиналась <strong>мануфактура по производству золотых поясов</strong> — позже перенесённая в Слуцк и прославившаяся как Слуцкие пояса. В каждом поясе — 200 граммов чистого золота.</span>
+            <span class="lang-content" data-lang="be">Менавіта тут пачыналася <strong>мануфактура па вытворчасці залатых паясоў</strong> — пазней перанесеная ў Слуцк. У кожным — 200 грамаў чыстага золата.</span>
+          </p>
+        </div>
+        <div class="events">
+          <div class="event">
+            <div class="event__year">1706</div>
+            <div class="event__body">
+              <div class="event__title"><span class="lang-content active" data-lang="ru">Шведское разрушение</span><span class="lang-content" data-lang="be">Шведскае знішчэнне</span></div>
+              <div class="event__desc"><span class="lang-content active" data-lang="ru">Войска Карла XII грабят и сжигают Альбу во время Северной войны</span><span class="lang-content" data-lang="be">Войскі Карла XII рабуюць і палюць Альбу падчас Паўночнай вайны</span></div>
+            </div>
+          </div>
+          <div class="event">
+            <div class="event__year">1720+</div>
+            <div class="event__body">
+              <div class="event__title"><span class="lang-content active" data-lang="ru">Второе рождение</span><span class="lang-content" data-lang="be">Другое нараджэнне</span></div>
+              <div class="event__desc"><span class="lang-content active" data-lang="ru">Рыбонька перестраивает парк в стиле французского классицизма</span><span class="lang-content" data-lang="be">Рыбонька перабудоўвае парк у стылі французскага класіцызму</span></div>
+            </div>
+          </div>
+          <div class="event">
+            <div class="event__year">1740-е</div>
+            <div class="event__body">
+              <div class="event__title"><span class="lang-content active" data-lang="ru">Мануфактура поясов</span><span class="lang-content" data-lang="be">Мануфактура паясоў</span></div>
+              <div class="event__desc"><span class="lang-content active" data-lang="ru">В Альбе начинают производить золотые пояса — будущие Слуцкие пояса</span><span class="lang-content" data-lang="be">У Альбе пачынаюць вырабляць залатыя паясы — будучыя Слуцкія паясы</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="chapter__img-wrap">
+        <img class="chapter__img chapter__img--tall"
+          src="img/hero-canal.jpg"
+          alt="Парк Альба весной — деревья над водой канала">
+        <p class="chapter__img-caption">
+          <span class="lang-content active" data-lang="ru">Один из каналов Альбы весной. Именно в этот период каналы были расширены и углублены</span>
+          <span class="lang-content" data-lang="be">Адзін з каналаў Альбы вясной. Менавіта ў гэты перыяд каналы былі пашыраны і паглыблены</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 3 -->
+<section class="chapter" id="chapter3">
+  <div class="chapter__inner">
+    <div class="chapter__grid">
+      <div>
+        <div class="chapter__meta">
+          <div class="chapter__period">III</div>
+          <p class="chapter__eyebrow">
+            <span class="lang-content active" data-lang="ru">1750-е — 1790</span>
+            <span class="lang-content" data-lang="be">1750-я — 1790</span>
+          </p>
+          <h2 class="chapter__title">
+            <span class="lang-content active" data-lang="ru">Маленький Версаль. Пане Коханку и его безумства</span>
+            <span class="lang-content" data-lang="be">Маленькі Версаль. Пане Каханку і яго вар'яцтвы</span>
+          </h2>
+          <p class="chapter__subtitle">
+            <span class="lang-content active" data-lang="ru">Кароль Станислав Радзивилл «Пане Коханку», 1734–1790</span>
+            <span class="lang-content" data-lang="be">Кароль Станіслаў Радзівіл «Пане Каханку», 1734–1790</span>
+          </p>
+        </div>
+        <div class="divider"></div>
+        <div class="chapter__text">
+          <p>
+            <span class="lang-content active" data-lang="ru">Кароль Станислав Радзивилл по прозвищу <strong>Пане Коханку</strong> («Мой любимый») был самым эксцентричным из Радзивиллов. При нём Альба достигла своего расцвета и превратилась в «маленький Версаль».</p>
+            <span class="lang-content" data-lang="be">Кароль Станіслаў Радзівіл па мянушцы <strong>Пане Каханку</strong> быў самым эксцэнтрычным з Радзівілаў. Пры ім Альба дасягнула росквіту і ператварылася ў «маленькі Версаль».</span>
+          </p>
+          <p>
+            <span class="lang-content active" data-lang="ru">Пане Коханку прокопал <strong>систему из 8 каналов</strong>, расходящихся звездой от круглого озера с островом. На острове выросла <strong>Альбянская Альтана</strong> — уменьшенная копия храма Святой Софии в Стамбуле. По каналам со шлюзами плавали нарядные лодки и небольшие корабли.</span>
+            <span class="lang-content" data-lang="be">Пане Каханку прарыў <strong>сістэму з 8 каналаў</strong>, якія расходзяцца зоркай ад круглага возера з выспай. На выспе вырасла <strong>Альбянская Альтана</strong> — памяншаная копія Сафіі Канстанцінопальскай.</span>
+          </p>
+          <p>
+            <span class="lang-content active" data-lang="ru">Рядом с парком была построена <strong>идиллическая деревня из 180 домиков</strong> с огородами — для знатных гостей, желавших «поиграть в крестьян». Зверинец был открыт для всех желающих: «не только для моей охоты, но чтобы каждый мог видеть».</span>
+            <span class="lang-content" data-lang="be">Побач з паркам была пабудавана <strong>ідылічная вёска з 180 хаткаў</strong> — для знатных гасцей, якія хацелі «пагуляць у сялян».</span>
+          </p>
+        </div>
+        <div class="chapter__quote">
+          <p>
+            <span class="lang-content active" data-lang="ru">В 1784 году в честь приезда короля Станислава Августа Понятовского всю дорогу от замка до Альбы осветили 800 000 ламп. Тысяча человек обслуживала иллюминацию. Фейерверк в три акта длился час.</span>
+            <span class="lang-content" data-lang="be">У 1784 годзе ў гонар прыезду апошняга караля Рэчы Паспалітай усю дарогу ад замка да Альбы асвятлілі 800 000 лямпаў. Фейерверк у тры акты доўжыўся гадзіну.</span>
+          </p>
+          <cite>
+            <span class="lang-content active" data-lang="ru">Из исторических хроник, 1784 год</span>
+            <span class="lang-content" data-lang="be">З гістарычных хронік, 1784 год</span>
+          </cite>
+        </div>
+        <div class="facts-row">
+          <div class="fact-pill fact-pill--dark">
+            <div class="fact-pill__num">800 000</div>
+            <div class="fact-pill__label"><span class="lang-content active" data-lang="ru">Ламп за один вечер</span><span class="lang-content" data-lang="be">Лямпаў за адзін вечар</span></div>
+          </div>
+          <div class="fact-pill">
+            <div class="fact-pill__num">8</div>
+            <div class="fact-pill__label"><span class="lang-content active" data-lang="ru">Каналов звездой</span><span class="lang-content" data-lang="be">Каналаў зоркай</span></div>
+          </div>
+          <div class="fact-pill">
+            <div class="fact-pill__num">180</div>
+            <div class="fact-pill__label"><span class="lang-content active" data-lang="ru">Домиков в деревне</span><span class="lang-content" data-lang="be">Хатак у вёсцы</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="chapter__img-wrap">
+        <img class="chapter__img chapter__img--wide"
+          src="img/alba-Island-with_quadracoprera.jpg"
+          alt="Аэрофото — круглое озеро с островом, система каналов парка Альба">
+        <p class="chapter__img-caption">
+          <span class="lang-content active" data-lang="ru">Аэрофотосъёмка парка Альба. Круглое озеро с островом в центре и расходящиеся каналы — видны до сих пор</span>
+          <span class="lang-content" data-lang="be">Аэрафотаздымак парку Альба. Круглае возера з выспай у цэнтры і каналы, якія расходзяцца — відаць да гэтага часу</span>
+        </p>
+        <div style="margin-top:1.5rem;">
+          <img class="chapter__img chapter__img--wide"
+            src="img/menjnjas-01.jpg"
+            alt="Макет дворца Альба — реконструкция архитектурного облика">
+          <p class="chapter__img-caption">
+            <span class="lang-content active" data-lang="ru">Макет центрального дворца Альбы — копии храма Святой Софии. Оригинал не сохранился</span>
+            <span class="lang-content" data-lang="be">Макет цэнтральнага палаца Альбы — копіі храма Сафіі. Арыгінал не захаваўся</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 4 -->
+<section class="chapter" id="chapter4">
+  <div class="chapter__inner">
+    <div class="chapter__grid chapter__grid--reverse">
+      <div>
+        <div class="chapter__meta">
+          <div class="chapter__period">IV</div>
+          <p class="chapter__eyebrow">
+            <span class="lang-content active" data-lang="ru">1790 — начало XX века</span>
+            <span class="lang-content" data-lang="be">1790 — пачатак XX стагоддзя</span>
+          </p>
+          <h2 class="chapter__title">
+            <span class="lang-content active" data-lang="ru">Упадок, война и забвение</span>
+            <span class="lang-content" data-lang="be">Заняпад, вайна і забыццё</span>
+          </h2>
+        </div>
+        <div class="divider"></div>
+        <div class="chapter__text">
+          <p>
+            <span class="lang-content active" data-lang="ru">После смерти Пане Коханку в 1790 году Альба начала угасать. Без хозяйской руки парк зарастал, каналы мелели, постройки ветшали.</span>
+            <span class="lang-content" data-lang="be">Пасля смерці Пане Каханку ў 1790 годзе Альба пачала гаснуць. Без гаспадарскай рукі парк зарастаў, каналы мялелі.</span>
+          </p>
+          <p>
+            <span class="lang-content active" data-lang="ru">В 1812 году через Несвиж прошли войска Наполеона. Из инвентарной описи того времени: <strong>«В зверинце забрано оленей — 83, коров тирольских — 8, лебедей — 22, лимонных деревьев выкорчевано — 132»</strong>.</span>
+            <span class="lang-content" data-lang="be">У 1812 годзе праз Нясвіж прайшлі войскі Напалеона. З інвентарнага апісання: <strong>«У звярынцы забрана аленяў — 83, кароў тірольскіх — 8, лебедзяў — 22, ліманных дрэў выкаранена — 132»</strong>.</span>
+          </p>
+          <p>
+            <span class="lang-content active" data-lang="ru">В конце XIX века <strong>княгиня Мария Доротея Радзивилл</strong> предпринимала попытки возродить парк: руины были разобраны, дорожки приведены в порядок. Но Альба так и не вернула прежнего величия — территория постепенно превращалась в обычный лесной массив.</span>
+            <span class="lang-content" data-lang="be">У канцы XIX стагоддзя <strong>княгіня Марыя Даратэя Радзівіл</strong> рабіла спробы адрадзіць парк. Але Альба так і не вярнула ранейшай велічы.</span>
+          </p>
+        </div>
+        <div class="events">
+          <div class="event">
+            <div class="event__year">1790</div>
+            <div class="event__body">
+              <div class="event__title"><span class="lang-content active" data-lang="ru">Смерть Пане Коханку</span><span class="lang-content" data-lang="be">Смерць Пане Каханку</span></div>
+              <div class="event__desc"><span class="lang-content active" data-lang="ru">Конец золотого века Альбы. Парк начинает приходить в запустение</span><span class="lang-content" data-lang="be">Канец залатога веку Альбы. Парк пачынае прыходзіць у запусценне</span></div>
+            </div>
+          </div>
+          <div class="event">
+            <div class="event__year">1812</div>
+            <div class="event__body">
+              <div class="event__title"><span class="lang-content active" data-lang="ru">Армия Наполеона</span><span class="lang-content" data-lang="be">Армія Напалеона</span></div>
+              <div class="event__desc"><span class="lang-content active" data-lang="ru">Полное разграбление. Из зверинца вывезли 83 оленя, 22 лебедя, выкорчевали 132 лимонных дерева</span><span class="lang-content" data-lang="be">Поўны рабунак. З звярынца вывезлі 83 аленя, 22 лебедзі, выкаранілі 132 ліманных дрэвы</span></div>
+            </div>
+          </div>
+          <div class="event">
+            <div class="event__year">XIX в.</div>
+            <div class="event__body">
+              <div class="event__title"><span class="lang-content active" data-lang="ru">Частичное восстановление</span><span class="lang-content" data-lang="be">Частковае аднаўленне</span></div>
+              <div class="event__desc"><span class="lang-content active" data-lang="ru">Мария Доротея расчищает руины, но парк уже никогда не станет прежним</span><span class="lang-content" data-lang="be">Марыя Даратэя расчышчае руіны, але парк ужо ніколі не стане ранейшым</span></div>
+            </div>
+          </div>
+          <div class="event">
+            <div class="event__year">XX в.</div>
+            <div class="event__body">
+              <div class="event__title"><span class="lang-content active" data-lang="ru">Превращение в лес</span><span class="lang-content" data-lang="be">Ператварэнне ў лес</span></div>
+              <div class="event__desc"><span class="lang-content active" data-lang="ru">Территория переходит в ведение лесхоза. О прошлом напоминают лишь каналы и вековые дубы</span><span class="lang-content" data-lang="be">Тэрыторыя пераходзіць у ведамасць лясгаса. Пра мінулае нагадваюць толькі каналы і вякавыя дубы</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="chapter__img-wrap">
+        <img class="chapter__img chapter__img--wide"
+          src="img/distillery-building-in-alba.webp"
+          alt="Здание винокурни Альбы XVIII века — историческая постройка фольварка">
+        <p class="chapter__img-caption">
+          <span class="lang-content active" data-lang="ru">Здание винокурни фольварка Альба, XVII–XVIII вв. Один из немногих сохранившихся архитектурных объектов усадьбы. Памятник историко-культурного наследия Беларуси</span>
+          <span class="lang-content" data-lang="be">Будынак вінакурні фальварка Альба, XVII–XVIII стст. Адзін з нямногіх захаваных архітэктурных аб'ектаў сядзібы</span>
+        </p>
+        <div style="margin-top:1rem;">
+          <img class="chapter__img chapter__img--wide"
+            src="img/window-of-the-distillery-in-Alba.webp"
+            alt="Готическое окно винокурни Альбы — деталь исторической архитектуры">
+          <p class="chapter__img-caption">
+            <span class="lang-content active" data-lang="ru">Готическое арочное окно винокурни. Несмотря на запустение, здание сохранило характерные архитектурные детали</span>
+            <span class="lang-content" data-lang="be">Гатычнае аркавае акно вінакурні. Нягледзячы на запусценне, будынак захаваў характэрныя архітэктурныя дэталі</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TODAY -->
+<section class="today" id="today">
+  <div class="today__inner">
+    <p class="section__eyebrow" style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;font-weight:500;">
+      <span class="lang-content active" data-lang="ru">Глава V · Наши дни</span>
+      <span class="lang-content" data-lang="be">Глава V · Нашы дні</span>
+    </p>
+    <h2 style="font-family:'Arkhip',sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);color:var(--green);line-height:1.2;margin-bottom:1rem;">
+      <span class="lang-content active" data-lang="ru">Альба сегодня: запущена, но не забыта</span>
+      <span class="lang-content" data-lang="be">Альба сёння: закінута, але не забыта</span>
+    </h2>
+    <div style="width:36px;height:2px;background:var(--accent);margin:1.25rem 0 2rem;"></div>
+    <div style="max-width:720px;margin-bottom:3rem;">
+      <p style="font-size:1rem;color:var(--muted);line-height:1.85;margin-bottom:1.25rem;">
+        <span class="lang-content active" data-lang="ru">Сегодня парк Альба — территория Несвижского лесхоза. Официально это лесопарк. Туристической инфраструктуры нет: ни указателей, ни дорожек, ни скамеек. Зато есть восемь каналов, которые видны из космоса, вековые дубы в три обхвата и главная аллея — старейшая в Беларуси.</span>
+        <span class="lang-content" data-lang="be">Сёння парк Альба — тэрыторыя Нясвіжскага лясгаса. Афіцыйна гэта лесапарк. Турыстычнай інфраструктуры няма. Затое ёсць восем каналаў, якія відаць з космасу, і вякавыя дубы.</span>
+      </p>
+      <p style="font-size:1rem;color:var(--muted);line-height:1.85;">
+        <span class="lang-content active" data-lang="ru">С 2020 года группа энтузиастов во главе с несвижанкой <strong>Анной Полын</strong> проводит волонтёрские субботники: расчищают аллеи, вырубают заросли, исследуют территорию. VK-сообщество <strong>savealba</strong> и Instagram <strong>@alba_neswizh</strong> собирают историю и новости парка.</span>
+        <span class="lang-content" data-lang="be">З 2020 года група энтузіастаў на чале з нясвіжанкай <strong>Ганнай Полын</strong> праводзіць валанцёрскія суботнікі. Суполка <strong>savealba</strong> і Instagram <strong>@alba_neswizh</strong> збіраюць гісторыю і навіны парку.</span>
+      </p>
+    </div>
+    <div class="today__grid">
+      <div class="today__card">
+        <img class="today__card-img"
+          src="img/500-year-old-oak-tree-with-a-child.webp"
+          alt="Вековой дуб парка Альба сегодня — 500-летнее дерево">
+        <div class="today__card-body">
+          <div class="today__card-title">
+            <span class="lang-content active" data-lang="ru">Что сохранилось</span>
+            <span class="lang-content" data-lang="be">Што захавалася</span>
+          </div>
+          <p class="today__card-text">
+            <span class="lang-content active" data-lang="ru">Восемь каналов, круглое озеро с островом, вековые дубы, главная аллея, фундаменты дворцов, здание винокурни XVII–XVIII вв. (памятник наследия).</span>
+            <span class="lang-content" data-lang="be">Восем каналаў, круглае возера з выспай, вякавыя дубы, галоўная алея, падмуркі палацаў, будынак вінакурні XVII–XVIII стст.</span>
+          </p>
+        </div>
+      </div>
+      <div class="today__card">
+        <img class="today__card-img"
+          src="img/anna-polyn-organizator.webp"
+          alt="Волонтёрский субботник в парке Альба — расчистка аллей">
+        <div class="today__card-body">
+          <div class="today__card-title">
+            <span class="lang-content active" data-lang="ru">Волонтёрское возрождение</span>
+            <span class="lang-content" data-lang="be">Валанцёрскае адраджэнне</span>
+          </div>
+          <p class="today__card-text">
+            <span class="lang-content active" data-lang="ru">С 2020 года — регулярные субботники. Расчищены сотни метров аллей. Каждый может приехать на следующий субботник и стать частью истории.</span>
+            <span class="lang-content" data-lang="be">З 2020 года — рэгулярныя суботнікі. Расчышчаны сотні метраў алей. Кожны можа прыехаць на наступны суботнік.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta__inner">
+    <div>
+      <p class="cta__eyebrow">
+        <span class="lang-content active" data-lang="ru">Продолжение истории</span>
+        <span class="lang-content" data-lang="be">Працяг гісторыі</span>
+      </p>
+      <h2 class="cta__title">
+        <span class="lang-content active" data-lang="ru">Приедьте и увидите сами</span>
+        <span class="lang-content" data-lang="be">Прыедзьце і ўбачыце самі</span>
+      </h2>
+      <p class="cta__text">
+        <span class="lang-content active" data-lang="ru">400 лет истории — под ногами. Каналы Пане Коханку, дубы времён Сиротки, аллея которой нет равных в Беларуси. Альба открыта для всех — бесплатно, без экскурсоводов.</span>
+        <span class="lang-content" data-lang="be">400 гадоў гісторыі — пад нагамі. Каналы Пане Каханку, дубы часоў Сіроткі, алея якой няма роўных у Беларусі. Альба адкрыта для ўсіх — бясплатна.</span>
+      </p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="how-to-get.html" class="btn btn--light">
+          <span class="lang-content active" data-lang="ru">Как добраться</span>
+          <span class="lang-content" data-lang="be">Як дабрацца</span>
+        </a>
+        <a href="volunteer.html" class="btn" style="background:transparent;color:#F5F2EB;border:1px solid rgba(245,242,235,0.35);">
+          <span class="lang-content active" data-lang="ru">Помочь парку</span>
+          <span class="lang-content" data-lang="be">Дапамагчы парку</span>
+        </a>
+      </div>
+    </div>
+    <div class="cta__cards">
+      <a href="index.html" class="cta__card">
+        <div class="cta__card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div><div class="cta__card-title"><span class="lang-content active" data-lang="ru">Главная об Альбе</span><span class="lang-content" data-lang="be">Галоўная пра Альбу</span></div><div class="cta__card-desc"><span class="lang-content active" data-lang="ru">Факты, галерея, статистика</span><span class="lang-content" data-lang="be">Факты, галерэя, статыстыка</span></div></div>
+      </a>
+      <a href="hidden-nesvizh.html" class="cta__card">
+        <div class="cta__card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <div><div class="cta__card-title"><span class="lang-content active" data-lang="ru">Несвиж без замка</span><span class="lang-content" data-lang="be">Нясвіж без замка</span></div><div class="cta__card-desc"><span class="lang-content active" data-lang="ru">Маршрут на 1 день</span><span class="lang-content" data-lang="be">Маршрут на 1 дзень</span></div></div>
+      </a>
+      <a href="volunteer.html" class="cta__card">
+        <div class="cta__card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div><div class="cta__card-title"><span class="lang-content active" data-lang="ru">Стать волонтёром</span><span class="lang-content" data-lang="be">Стаць валанцёрам</span></div><div class="cta__card-desc"><span class="lang-content active" data-lang="ru">Субботники и как помочь</span><span class="lang-content" data-lang="be">Суботнікі і як дапамагчы</span></div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div>
+        <a href="index.html" class="footer__logo">Альба</a>
+        <p class="footer__about"><span class="lang-content active" data-lang="ru">Информационный проект о парке Альба в Несвиже. Цель — рассказать об этом уникальном месте и помочь его восстановлению.</span><span class="lang-content" data-lang="be">Інфармацыйны праект пра парк Альба ў Нясвіжы.</span></p>
+      </div>
+      <div>
+        <p class="footer__heading"><span class="lang-content active" data-lang="ru">Страницы</span><span class="lang-content" data-lang="be">Старонкі</span></p>
+        <ul class="footer__links">
+          <li><a href="index.html"><span class="lang-content active" data-lang="ru">Главная</span><span class="lang-content" data-lang="be">Галоўная</span></a></li>
+          <li><a href="history.html"><span class="lang-content active" data-lang="ru">История</span><span class="lang-content" data-lang="be">Гісторыя</span></a></li>
+          <li><a href="hidden-nesvizh.html"><span class="lang-content active" data-lang="ru">Несвиж без замка</span><span class="lang-content" data-lang="be">Нясвіж без замка</span></a></li>
+          <li><a href="volunteer.html"><span class="lang-content active" data-lang="ru">Волонтёрам</span><span class="lang-content" data-lang="be">Валанцёрам</span></a></li>
+          <li><a href="how-to-get.html"><span class="lang-content active" data-lang="ru">Как добраться</span><span class="lang-content" data-lang="be">Як дабрацца</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__heading"><span class="lang-content active" data-lang="ru">Соцсети</span><span class="lang-content" data-lang="be">Сацсеткі</span></p>
+              <ul class="footer__links">
+          <li><a href="https://www.instagram.com/alba_neswizh/" target="_blank">Instagram @alba_neswizh</a></li>
+          <li><a href="https://vk.com/savealba" target="_blank">VK savealba</a></li>
+          <li><a href="https://t.me/alba_poselok_nesvisz" target="_blank">Telegram</a></li>
+          <li><a href="tel:+375291984942">+375 29 198-49-42</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span><span class="lang-content active" data-lang="ru">© 2025 Парк Альба, Несвиж. Волонтёрский проект.</span><span class="lang-content" data-lang="be">© 2025 Парк Альба, Нясвіж. Валанцёрскі праект.</span></span>
+      <div class="footer__social">
+        <a href="https://www.instagram.com/alba_neswizh/" target="_blank">Instagram</a>
+        <a href="https://vk.com/savealba" target="_blank">VK</a>
+        <a href="https://t.me/alba_poselok_nesvisz" target="_blank">Telegram</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function setLang(lang){document.querySelectorAll('.lang-content').forEach(el=>el.classList.toggle('active',el.dataset.lang===lang));document.querySelectorAll('.nav__lang button,.mob-menu__lang button').forEach(b=>b.classList.toggle('active',b.textContent.trim()===lang.toUpperCase()||(lang==='ru'&&b.textContent.includes('Русский'))||(lang==='be'&&b.textContent.includes('Беларускі'))));localStorage.setItem('alba-lang',lang);}
+function toggleMob(){var m=document.getElementById('mob-menu');var b=document.querySelector('.nav__burger');if(!m||!b)return;var o=m.classList.toggle('open');b.classList.toggle('open',o);document.body.style.overflow=o?'hidden':'';}
+document.addEventListener('click',function(e){var m=document.getElementById('mob-menu');var b=document.querySelector('.nav__burger');if(m&&m.classList.contains('open')&&!m.contains(e.target)&&b&&!b.contains(e.target)){m.classList.remove('open');b.classList.remove('open');document.body.style.overflow='';}});
+function openShare(){const url=window.location.href,title='Парк Альба — забытый Версаль Беларуси',text='Парк Альба в Несвиже — первый зоопарк Беларуси, старейшая аллея страны и система каналов XVI века. Его восстанавливают волонтёры!';if(navigator.share){navigator.share({title,text,url}).catch(()=>{});return;}const p=document.getElementById('share-popup');if(p){document.getElementById('share-url').value=url;p.classList.add('open');}}
+function closeShare(){const p=document.getElementById('share-popup');if(p)p.classList.remove('open');}
+function copyShareUrl(){const i=document.getElementById('share-url');i.select();document.execCommand('copy');document.querySelectorAll('.shr-copy-btn,.shr-cp').forEach(b=>{const t=b.innerHTML;b.innerHTML='✓';setTimeout(()=>b.innerHTML=t,2000);});}
+function shareVk(){const u=encodeURIComponent(window.location.href);window.open('https://vk.com/share.php?url='+u,'_blank');}
+function shareTg(){const u=encodeURIComponent(window.location.href),t=encodeURIComponent('Парк Альба — забытый Версаль Беларуси');window.open('https://t.me/share/url?url='+u+'&text='+t,'_blank');}
+function shareWa(){const u=encodeURIComponent(window.location.href),t=encodeURIComponent('Парк Альба в Несвиже — первый зоопарк Беларуси и старейшая аллея страны: ');window.open('https://wa.me/?text='+t+u,'_blank');}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeShare();});
+window.addEventListener('scroll',()=>{const n=document.querySelector('.nav');if(n)n.style.boxShadow=window.scrollY>20?'0 2px 20px rgba(46,64,42,0.1)':'none';});
+const _obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}},{threshold:0.08}));
+document.querySelectorAll('.facts__card,.history__item,.volunteer__way,.stats__item,.place-card,.plan__step,.practical__card,.cta__link,.cta__card,.event,.fact-pill,.today__card,.way-card,.subbotnik-card,.contact-card,.next-event__detail,.poi,.route__step').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity .5s ease,transform .5s ease';_obs.observe(el);});
+const _sl=localStorage.getItem('alba-lang');if(_sl&&_sl!=='ru')setLang(_sl);
+
+</script>
+</body>
+</html>

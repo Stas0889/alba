@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Как добраться до парка Альба Несвиж | Маршрут, карта, координаты</title>
+<meta name="description" content="Как добраться до парка Альба в Несвиже: из Минска, на машине, пешком. Координаты входа, карта маршрута, советы по навигации.">
+<meta name="keywords" content="как добраться до альбы несвиж, парк альба несвиж маршрут, альба несвиж координаты, несвиж как добраться из минска">
+<meta property="og:title" content="Как добраться до парка Альба — Несвиж">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+@font-face {
+  font-family: 'Arkhip';
+  src: url('Arkhip-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green: #2E402A; --green-btn: #2D4126; --green-hover: #3D5635;
+  --bg: #EEEADF; --card-bg: #F5F2EB; --text: #232323;
+  --muted: #495547; --accent: #C4A35A; --border: #D4CFC4;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+
+/* NAV */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 2.5rem; height: 60px; display: flex; align-items: center; justify-content: space-between; background: #EEEADF; background: rgba(238,234,223,0.97); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); transition: box-shadow 0.3s; }
+.nav__logo { font-family: 'Arkhip', sans-serif; font-size: 1rem; color: #2E402A !important; text-decoration: none; letter-spacing: 0.05em; }
+.nav__links { display: flex; gap: 2rem; list-style: none; }
+.nav__links a { font-size: 0.875rem; color: var(--muted); text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
+.nav__links a:hover, .nav__links a.active { color: var(--green); font-weight: 500; }
+.nav__lang { display: flex; gap: 0.375rem; }
+.nav__lang button { background: none; border: none; font-family: 'Inter', sans-serif; font-size: 0.78rem; color: var(--muted); cursor: pointer; padding: 3px 8px; border-radius: 4px; transition: all 0.2s; }
+.nav__lang button.active, .nav__lang button:hover { background: var(--green); color: #fff; }
+
+/* BTN */
+.btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.75rem 1.5rem; border-radius: 5px; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 500; text-decoration: none; letter-spacing: 0.03em; cursor: pointer; transition: all 0.25s; border: none; white-space: nowrap; }
+.btn--primary { background: var(--green-btn); color: #F5F2EB; }
+.btn--primary:hover { background: var(--green-hover); transform: translateY(-1px); }
+.btn--outline { background: transparent; color: var(--green); border: 1px solid var(--green); }
+.btn--outline:hover { background: var(--green); color: #F5F2EB; }
+.btn--light { background: #F5F2EB; color: var(--green); }
+.btn--light:hover { background: #fff; transform: translateY(-1px); }
+.divider { width: 36px; height: 2px; background: var(--accent); margin: 1.25rem 0; }
+
+/* HERO */
+.hero { padding-top: 60px; background: var(--bg); }
+.hero__inner { max-width: 1100px; margin: 0 auto; padding: 5rem 2.5rem 3rem; }
+.hero__eyebrow { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.25rem; font-weight: 500; }
+.hero__title { font-family: 'Arkhip', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); color: var(--green); line-height: 1.1; letter-spacing: -0.01em; max-width: 700px; margin-bottom: 1.5rem; }
+.hero__sub { font-size: 1.05rem; color: var(--muted); line-height: 1.75; max-width: 580px; font-weight: 300; }
+
+/* COORDS BAR */
+.coords-bar { background: var(--green); padding: 1.25rem 2.5rem; }
+.coords-bar__inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.coords-bar__item { display: flex; align-items: center; gap: 0.75rem; }
+.coords-bar__icon { width: 32px; height: 32px; border-radius: 6px; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; color: var(--accent); flex-shrink: 0; }
+.coords-bar__icon svg { width: 16px; height: 16px; }
+.coords-bar__label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(245,242,235,0.45); margin-bottom: 0.1rem; }
+.coords-bar__val { font-size: 0.9rem; color: #F5F2EB; font-weight: 500; font-family: 'Arkhip', sans-serif; }
+.coords-bar__sep { width: 1px; height: 36px; background: rgba(255,255,255,0.1); }
+
+/* MAP BLOCK */
+.map-block { background: var(--bg); padding: 0; }
+.map-block__iframe { width: 100%; height: 480px; border: none; display: block; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+/* ROUTES */
+.routes { background: var(--bg); padding: 5rem 2.5rem; }
+.routes__inner { max-width: 1100px; margin: 0 auto; }
+.section__eyebrow { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; font-weight: 500; }
+.section__title { font-family: 'Arkhip', sans-serif; font-size: clamp(1.6rem, 3vw, 2.4rem); color: var(--green); line-height: 1.2; margin-bottom: 1rem; }
+.routes__tabs { display: flex; gap: 0.5rem; margin: 2rem 0 0; border-bottom: 1px solid var(--border); padding-bottom: 0; }
+.routes__tab { padding: 0.75rem 1.25rem; font-size: 0.875rem; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.2s; font-weight: 400; background: none; border-top: none; border-left: none; border-right: none; font-family: 'Inter', sans-serif; }
+.routes__tab:hover { color: var(--green); }
+.routes__tab.active { color: var(--green); border-bottom-color: var(--accent); font-weight: 500; }
+.routes__panels { margin-top: 2.5rem; }
+.routes__panel { display: none; }
+.routes__panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+.route__steps { display: flex; flex-direction: column; gap: 0; }
+.route__step { display: flex; gap: 1.25rem; padding-bottom: 1.5rem; position: relative; }
+.route__step:last-child { padding-bottom: 0; }
+.route__step-line { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+.route__step-dot { width: 32px; height: 32px; border-radius: 50%; background: var(--card-bg); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--green); z-index: 1; }
+.route__step-dot svg { width: 15px; height: 15px; }
+.route__step-dot--accent { background: var(--green); border-color: var(--green); color: #F5F2EB; }
+.route__step-connector { flex: 1; width: 1px; background: var(--border); margin: 4px 0; }
+.route__step-body { padding-top: 0.4rem; }
+.route__step-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); font-weight: 500; margin-bottom: 0.25rem; }
+.route__step-title { font-family: 'Arkhip', sans-serif; font-size: 0.95rem; color: var(--green); margin-bottom: 0.3rem; }
+.route__step-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.65; }
+.route__tip { margin-top: 1.5rem; padding: 1rem 1.25rem; background: rgba(196,163,90,0.08); border: 1px solid rgba(196,163,90,0.25); border-radius: 6px; font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+.route__tip strong { color: var(--text); }
+.route__img { width: 100%; border-radius: 8px; object-fit: cover; display: block; }
+.route__img--tall { aspect-ratio: 3/4; }
+.route__img--wide { aspect-ratio: 4/3; }
+.route__img-caption { margin-top: 0.75rem; font-size: 0.75rem; color: var(--muted); font-style: italic; }
+
+/* IN PARK */
+.in-park { background: var(--card-bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 5rem 2.5rem; }
+.in-park__inner { max-width: 1100px; margin: 0 auto; }
+.in-park__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; margin-top: 3rem; }
+.in-park__map-img { width: 100%; border-radius: 8px; display: block; border: 1px solid var(--border); }
+.poi-list { display: flex; flex-direction: column; gap: 1rem; }
+.poi { display: flex; gap: 1rem; padding: 1.1rem; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; transition: background 0.2s; }
+.poi:hover { background: #e8e4d8; }
+.poi__num { font-family: 'Arkhip', sans-serif; font-size: 1rem; color: var(--accent); width: 28px; flex-shrink: 0; line-height: 1.4; }
+.poi__title { font-size: 0.875rem; font-weight: 500; color: var(--green); margin-bottom: 0.2rem; }
+.poi__desc { font-size: 0.8rem; color: var(--muted); line-height: 1.55; }
+
+/* PRACTICAL */
+.practical { background: var(--bg); padding: 5rem 2.5rem; }
+.practical__inner { max-width: 1100px; margin: 0 auto; }
+.practical__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+.practical__card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.75rem; }
+.practical__icon { width: 40px; height: 40px; color: var(--green); margin-bottom: 1rem; }
+.practical__title { font-family: 'Arkhip', sans-serif; font-size: 0.95rem; color: var(--green); margin-bottom: 0.6rem; }
+.practical__text { font-size: 0.875rem; color: var(--muted); line-height: 1.7; }
+.practical__text strong { color: var(--text); font-weight: 500; }
+
+/* CTA */
+.cta { background: var(--green); padding: 5rem 2.5rem; position: relative; overflow: hidden; }
+.cta::before { content: 'АЛЬБА'; position: absolute; right: -2rem; top: 50%; transform: translateY(-50%); font-family: 'Arkhip', sans-serif; font-size: 12rem; color: rgba(255,255,255,0.04); pointer-events: none; letter-spacing: -0.05em; line-height: 1; }
+.cta__inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; }
+.cta__eyebrow { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; font-weight: 500; }
+.cta__title { font-family: 'Arkhip', sans-serif; font-size: clamp(1.75rem, 3vw, 2.5rem); color: #F5F2EB; line-height: 1.2; margin-bottom: 1.25rem; }
+.cta__text { font-size: 0.95rem; color: rgba(245,242,235,0.65); line-height: 1.75; margin-bottom: 2rem; }
+.cta__links { display: flex; flex-direction: column; gap: 0.75rem; }
+.cta__link { display: flex; align-items: center; gap: 1rem; padding: 1.1rem 1.5rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; text-decoration: none; transition: background 0.2s; }
+.cta__link:hover { background: rgba(255,255,255,0.09); }
+.cta__link-icon { width: 34px; height: 34px; border-radius: 50%; background: rgba(196,163,90,0.15); border: 1px solid rgba(196,163,90,0.35); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent); }
+.cta__link-icon svg { width: 16px; height: 16px; }
+.cta__link-title { font-size: 0.875rem; font-weight: 500; color: #F5F2EB; margin-bottom: 0.1rem; }
+.cta__link-desc { font-size: 0.75rem; color: rgba(245,242,235,0.5); }
+
+/* FOOTER */
+footer { background: #1a2918; padding: 4rem 2.5rem 2.5rem; color: rgba(245,242,235,0.55); }
+.footer__inner { max-width: 1100px; margin: 0 auto; }
+.footer__top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 2rem; }
+.footer__logo { font-family: 'Arkhip', sans-serif; font-size: 1.4rem; color: #F5F2EB; margin-bottom: 0.75rem; display: block; text-decoration: none; }
+.footer__about { font-size: 0.85rem; line-height: 1.7; max-width: 320px; }
+.footer__heading { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.25rem; font-weight: 500; }
+.footer__links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.footer__links a { font-size: 0.875rem; color: rgba(245,242,235,0.55); text-decoration: none; transition: color 0.2s; }
+.footer__links a:hover { color: #F5F2EB; }
+.footer__bottom { display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; }
+.footer__social { display: flex; gap: 1rem; }
+.footer__social a { color: rgba(245,242,235,0.4); text-decoration: none; font-size: 0.8rem; transition: color 0.2s; }
+.footer__social a:hover { color: var(--accent); }
+
+/* LANG */
+.lang-content { display: none; }
+.lang-content.active { display: block; }
+span.lang-content { display: none; }
+span.lang-content.active { display: inline; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .routes__panel.active, .in-park__grid, .cta__inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .practical__grid { grid-template-columns: 1fr 1fr; }
+  .coords-bar__sep { display: none; }
+  .footer__top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .nav { padding: 0 1.25rem; }
+  .nav__links { display: none; }
+  .hero__inner, .routes, .in-park, .practical, .cta { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .coords-bar { padding: 1rem 1.25rem; }
+  .coords-bar__inner { gap: 1rem; }
+  .routes__tabs { overflow-x: auto; scrollbar-width: none; }
+  .routes__tabs::-webkit-scrollbar { display: none; }
+  .practical__grid { grid-template-columns: 1fr; }
+  .footer__top { grid-template-columns: 1fr; gap: 2rem; }
+  .footer__bottom { flex-direction: column; gap: 1rem; text-align: center; }
+}
+
+/* ── OVERFLOW FIX ── */
+html,body{max-width:100vw;overflow-x:hidden;}
+/* ── MOBILE BURGER ── */
+.nav__burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;cursor:pointer;padding:4px;background:none;border:none;}
+.nav__burger span{display:block;width:22px;height:2px;background:var(--green);border-radius:2px;transition:all .25s;transform-origin:center;}
+.nav__burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav__burger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.nav__burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+@media(max-width:768px){.nav__burger{display:flex;}.nav__links{display:none!important;}}
+
+/* ── MOBILE MENU ── */
+.mob-menu{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;width:100%;max-width:100vw;background:var(--bg);z-index:99;overflow-y:auto;overflow-x:hidden;padding:0 0 4rem;}
+.mob-menu.open{display:block;}
+.mob-menu__links{display:flex;flex-direction:column;border-top:1px solid var(--border);padding:0 1.5rem;}
+.mob-menu__links a{font-size:1.05rem;color:var(--text);text-decoration:none;padding:1rem 0;border-bottom:1px solid var(--border);transition:color .2s;}
+.mob-menu__links a:hover,.mob-menu__links a.active{color:var(--green);}
+.mob-menu__bottom{padding:1.5rem 1.5rem 0;display:flex;flex-direction:column;gap:1rem;}
+.mob-menu__contacts{display:flex;flex-direction:column;gap:.6rem;}
+.mob-menu__contacts a{font-size:.9rem;color:var(--muted);text-decoration:none;}
+.mob-menu__contacts a:hover{color:var(--green);}
+.mob-menu__lang{display:flex;gap:.5rem;}
+.mob-menu__lang button{padding:.5rem 1.25rem;border-radius:4px;border:1px solid var(--border);background:none;font-family:'Inter',sans-serif;font-size:.875rem;color:var(--muted);cursor:pointer;transition:all .2s;}
+.mob-menu__lang button.active{background:var(--green);color:#fff;border-color:var(--green);}
+
+/* ── SHARE POPUP ── */
+.share-popup{display:none;position:fixed;inset:0;z-index:200;align-items:center;justify-content:center;background:rgba(0,0,0,.45);padding:1.5rem;}
+.share-popup.open{display:flex;}
+.share-popup__box{background:var(--card-bg);border-radius:12px;padding:2rem;width:100%;max-width:420px;box-shadow:0 20px 60px rgba(0,0,0,.2);}
+.share-popup__title{font-family:'Arkhip',sans-serif;font-size:1.1rem;color:var(--green);margin-bottom:.4rem;}
+.share-popup__sub{font-size:.83rem;color:var(--muted);line-height:1.55;margin-bottom:1.5rem;}
+.share-popup__socials{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.25rem;}
+.shr-btn{display:flex;align-items:center;gap:.55rem;padding:.7rem .9rem;border-radius:6px;font-size:.83rem;font-weight:500;text-decoration:none;transition:opacity .2s;border:none;cursor:pointer;font-family:'Inter',sans-serif;}
+.shr-btn:hover{opacity:.85;}
+.shr-btn svg{width:17px;height:17px;flex-shrink:0;}
+.shr-vk{background:#0077FF;color:#fff;}
+.shr-tg{background:#26A5E4;color:#fff;}
+.shr-wa{background:#25D366;color:#fff;}
+.shr-cp{background:var(--bg);color:var(--text);border:1px solid var(--border);}
+.share-popup__url-row{display:flex;gap:.5rem;margin-bottom:1rem;}
+.share-popup__url-row input{flex:1;padding:.55rem .8rem;border:1px solid var(--border);border-radius:5px;font-size:.78rem;color:var(--muted);background:var(--bg);font-family:'Inter',sans-serif;min-width:0;}
+.shr-copy-btn{padding:.55rem .9rem;background:var(--green-btn);color:#F5F2EB;border:none;border-radius:5px;font-size:.78rem;font-weight:500;cursor:pointer;white-space:nowrap;font-family:'Inter',sans-serif;transition:background .2s;}
+.shr-copy-btn:hover{background:var(--green-hover);}
+.share-popup__close{text-align:right;}
+.share-popup__close button{background:none;border:none;font-size:.83rem;color:var(--muted);cursor:pointer;font-family:'Inter',sans-serif;}
+.share-popup__close button:hover{color:var(--green);}
+
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav__logo">Альба</a>
+  <ul class="nav__links">
+    <li><a href="history.html"><span class="lang-content active" data-lang="ru">История</span><span class="lang-content" data-lang="be">Гісторыя</span></a></li>
+    <li><a href="hidden-nesvizh.html"><span class="lang-content active" data-lang="ru">Несвиж без замка</span><span class="lang-content" data-lang="be">Нясвіж без замка</span></a></li>
+    <li><a href="gallery.html"><span class="lang-content active" data-lang="ru">Галерея</span><span class="lang-content" data-lang="be">Галерэя</span></a></li>
+    <li><a href="volunteer.html"><span class="lang-content active" data-lang="ru">Волонтёрам</span><span class="lang-content" data-lang="be">Валанцёрам</span></a></li>
+    <li><a href="how-to-get.html" class="active"><span class="lang-content active" data-lang="ru">Как добраться</span><span class="lang-content" data-lang="be">Як дабрацца</span></a></li>
+  </ul>
+    <div style="display:flex;align-items:center;gap:.75rem;">
+    <div class="nav__lang">
+      <button class="active" onclick="setLang('ru')">RU</button>
+      <button onclick="setLang('be')">BE</button>
+    </div>
+    <button class="nav__burger" onclick="toggleMob()" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div id="mob-menu" class="mob-menu">
+  <nav class="mob-menu__links">
+    <a href="index.html"><span class="lang-content active" data-lang="ru">Главная</span><span class="lang-content" data-lang="be">Галоўная</span></a>
+    <a href="history.html"><span class="lang-content active" data-lang="ru">История</span><span class="lang-content" data-lang="be">Гісторыя</span></a>
+    <a href="hidden-nesvizh.html"><span class="lang-content active" data-lang="ru">Несвиж без замка</span><span class="lang-content" data-lang="be">Нясвіж без замка</span></a>
+    <a href="gallery.html"><span class="lang-content active" data-lang="ru">Галерея</span><span class="lang-content" data-lang="be">Галерэя</span></a>
+    <a href="volunteer.html"><span class="lang-content active" data-lang="ru">Волонтёрам</span><span class="lang-content" data-lang="be">Валанцёрам</span></a>
+    <a href="how-to-get.html"><span class="lang-content active" data-lang="ru">Как добраться</span><span class="lang-content" data-lang="be">Як дабрацца</span></a>
+  </nav>
+  <div class="mob-menu__bottom">
+    <div class="mob-menu__contacts">
+      <a href="https://www.instagram.com/alba_neswizh/" target="_blank">Instagram @alba_neswizh</a>
+      <a href="https://vk.com/savealba" target="_blank">VK savealba</a>
+      <a href="https://t.me/alba_poselok_nesvisz" target="_blank">Telegram</a>
+      <a href="tel:+375291984942">+375 29 198-49-42</a>
+    </div>
+    <div class="mob-menu__lang">
+      <button class="active" onclick="setLang('ru');toggleMob()">Русский</button>
+      <button onclick="setLang('be');toggleMob()">Беларускі</button>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__inner">
+    <p class="hero__eyebrow">
+      <span class="lang-content active" data-lang="ru">Навигация · Несвиж</span>
+      <span class="lang-content" data-lang="be">Навігацыя · Нясвіж</span>
+    </p>
+    <h1 class="hero__title">
+      <span class="lang-content active" data-lang="ru">Как добраться до парка Альба</span>
+      <span class="lang-content" data-lang="be">Як дабрацца да парку Альба</span>
+    </h1>
+    <p class="hero__sub">
+      <span class="lang-content active" data-lang="ru">Парк находится в 3,9 км от Несвижского замка. Добраться легко — на машине, такси или пешком. Главное — знать координаты входа.</span>
+      <span class="lang-content" data-lang="be">Парк знаходзіцца ў 3,9 км ад Нясвіжскага замка. Дабрацца лёгка — на машыне, таксі або пешшу. Галоўнае — ведаць каардынаты ўваходу.</span>
+    </p>
+  </div>
+</section>
+
+<!-- COORDS BAR -->
+<div class="coords-bar">
+  <div class="coords-bar__inner">
+    <div class="coords-bar__item">
+      <div class="coords-bar__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      </div>
+      <div>
+        <div class="coords-bar__label"><span class="lang-content active" data-lang="ru">Координаты</span><span class="lang-content" data-lang="be">Каардынаты</span></div>
+        <div class="coords-bar__val">53.202766, 26.642774</div>
+      </div>
+    </div>
+    <div class="coords-bar__sep"></div>
+    <div class="coords-bar__item">
+      <div class="coords-bar__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      </div>
+      <div>
+        <div class="coords-bar__label"><span class="lang-content active" data-lang="ru">На машине от замка</span><span class="lang-content" data-lang="be">На машыне ад замка</span></div>
+        <div class="coords-bar__val">7 <span style="font-family:'Inter';font-size:0.85rem;font-weight:400;"><span class="lang-content active" data-lang="ru">мин · 3,9 км</span><span class="lang-content" data-lang="be">хв · 3,9 км</span></span></div>
+      </div>
+    </div>
+    <div class="coords-bar__sep"></div>
+    <div class="coords-bar__item">
+      <div class="coords-bar__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="2"/><path d="M12 6v7M9 9l3 2 3-2M9 21l3-5 3 5"/></svg>
+      </div>
+      <div>
+        <div class="coords-bar__label"><span class="lang-content active" data-lang="ru">Пешком от замка</span><span class="lang-content" data-lang="be">Пешшу ад замка</span></div>
+        <div class="coords-bar__val">52 <span style="font-family:'Inter';font-size:0.85rem;font-weight:400;"><span class="lang-content active" data-lang="ru">мин</span><span class="lang-content" data-lang="be">хв</span></span></div>
+      </div>
+    </div>
+    <div class="coords-bar__sep"></div>
+    <div class="coords-bar__item">
+      <div class="coords-bar__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <div>
+        <div class="coords-bar__label"><span class="lang-content active" data-lang="ru">От Минска</span><span class="lang-content" data-lang="be">Ад Мінска</span></div>
+        <div class="coords-bar__val">~120 км</div>
+      </div>
+    </div>
+    <a href="https://maps.google.com/?q=53.202766,26.642774" target="_blank" class="btn btn--light" style="flex-shrink:0;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      <span class="lang-content active" data-lang="ru">Открыть в картах</span>
+      <span class="lang-content" data-lang="be">Адкрыць у картах</span>
+    </a>
+  </div>
+</div>
+
+<!-- MAP -->
+<div class="map-block">
+  <iframe class="map-block__iframe"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9779.5!2d26.62!3d53.20!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTPCsDEyJzA5LjkiTiAyNsKwMzgnMzQuMCJF!5e1!3m2!1sru!2sby!4v1"
+    allowfullscreen loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    title="Карта — парк Альба и Несвиж">
+  </iframe>
+</div>
+
+<!-- ROUTES -->
+<section class="routes" id="routes">
+  <div class="routes__inner">
+    <p class="section__eyebrow">
+      <span class="lang-content active" data-lang="ru">Маршруты</span>
+      <span class="lang-content" data-lang="be">Маршруты</span>
+    </p>
+    <h2 class="section__title">
+      <span class="lang-content active" data-lang="ru">Выберите способ добраться</span>
+      <span class="lang-content" data-lang="be">Выберыце спосаб дабрацца</span>
+    </h2>
+
+    <div class="routes__tabs">
+      <button class="routes__tab active" onclick="showTab('car')">
+        <span class="lang-content active" data-lang="ru">На машине</span>
+        <span class="lang-content" data-lang="be">На машыне</span>
+      </button>
+      <button class="routes__tab" onclick="showTab('minsk')">
+        <span class="lang-content active" data-lang="ru">Из Минска</span>
+        <span class="lang-content" data-lang="be">З Мінска</span>
+      </button>
+      <button class="routes__tab" onclick="showTab('walk')">
+        <span class="lang-content active" data-lang="ru">Пешком</span>
+        <span class="lang-content" data-lang="be">Пешшу</span>
+      </button>
+      <button class="routes__tab" onclick="showTab('taxi')">
+        <span class="lang-content active" data-lang="ru">Такси</span>
+        <span class="lang-content" data-lang="be">Таксі</span>
+      </button>
+    </div>
+
+    <div class="routes__panels">
+
+      <!-- CAR -->
+      <div class="routes__panel active" id="panel-car">
+        <div>
+          <div class="route__steps">
+            <div class="route__step">
+              <div class="route__step-line">
+                <div class="route__step-dot route__step-dot--accent">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                </div>
+                <div class="route__step-connector"></div>
+              </div>
+              <div class="route__step-body">
+                <div class="route__step-label"><span class="lang-content active" data-lang="ru">Старт</span><span class="lang-content" data-lang="be">Старт</span></div>
+                <div class="route__step-title"><span class="lang-content active" data-lang="ru">Несвижский замок</span><span class="lang-content" data-lang="be">Нясвіжскі замак</span></div>
+                <p class="route__step-desc"><span class="lang-content active" data-lang="ru">Выезжайте из парковки у замка на восток, в сторону города.</span><span class="lang-content" data-lang="be">Выязджайце з паркоўкі ля замка на ўсход, у бок горада.</span></p>
+              </div>
+            </div>
+            <div class="route__step">
+              <div class="route__step-line">
+                <div class="route__step-dot">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </div>
+                <div class="route__step-connector"></div>
+              </div>
+              <div class="route__step-body">
+                <div class="route__step-label"><span class="lang-content active" data-lang="ru">Шаг 1</span><span class="lang-content" data-lang="be">Крок 1</span></div>
+                <div class="route__step-title"><span class="lang-content active" data-lang="ru">Улица Ленинская → Дзержинского</span><span class="lang-content" data-lang="be">Вуліца Леніна → Дзяржынскага</span></div>
+                <p class="route__step-desc"><span class="lang-content active" data-lang="ru">Через центр Несвижа, мимо ратуши, выезд на улицу Дзержинского в западном направлении.</span><span class="lang-content" data-lang="be">Праз цэнтр Нясвіжа, міма ратушы, выезд на вуліцу Дзяржынскага ў заходнім напрамку.</span></p>
+              </div>
+            </div>
+            <div class="route__step">
+              <div class="route__step-line">
+                <div class="route__step-dot">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </div>
+                <div class="route__step-connector"></div>
+              </div>
+              <div class="route__step-body">
+                <div class="route__step-label"><span class="lang-content active" data-lang="ru">Шаг 2</span><span class="lang-content" data-lang="be">Крок 2</span></div>
+                <div class="route__step-title"><span class="lang-content active" data-lang="ru">Дорога через посёлок Альба</span><span class="lang-content" data-lang="be">Дарога праз пасёлак Альба</span></div>
+                <p class="route__step-desc"><span class="lang-content active" data-lang="ru">Через посёлок прямо ~2 км. Дорога переходит в грунтовую — это нормально, вы на правильном пути.</span><span class="lang-content" data-lang="be">Праз пасёлак прама ~2 км. Дарога пераходзіць у грунтавую — гэта нармальна, вы на правільным шляху.</span></p>
+              </div>
+            </div>
+            <div class="route__step">
+              <div class="route__step-line">
+                <div class="route__step-dot route__step-dot--accent">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg>
+                </div>
+              </div>
+              <div class="route__step-body">
+                <div class="route__step-label"><span class="lang-content active" data-lang="ru">Финиш · 7 минут</span><span class="lang-content" data-lang="be">Фініш · 7 хвілін</span></div>
+                <div class="route__step-title"><span class="lang-content active" data-lang="ru">Вход в парк Альба</span><span class="lang-content" data-lang="be">Уваход у парк Альба</span></div>
+                <p class="route__step-desc"><span class="lang-content active" data-lang="ru">Координаты: 53.202766, 26.642774. Машину можно оставить у края дороги.</span><span class="lang-content" data-lang="be">Каардынаты: 53.202766, 26.642774. Машыну можна пакінуць ля краю дарогі.</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="route__tip">
+            <strong><span class="lang-content active" data-lang="ru">Совет:</span><span class="lang-content" data-lang="be">Парада:</span></strong>
+            <span class="lang-content active" data-lang="ru"> Введите в навигатор «посёлок Альба, Несвижский район» или coordinates 53.202766, 26.642774. Google Maps находит точно.</span>
+            <span class="lang-content" data-lang="be"> Увядзіце ў навігатар «пасёлак Альба, Нясвіжскі раён» або каардынаты 53.202766, 26.642774.</span>
+          </div>
+        </div>
+        <div>
+          <img class="route__img route__img--tall"
+            src="img/alley-summer.webp"
+            alt="Аллея дороги к парку Альба — деревья вдоль пути">
+          <p class="route__img-caption">
+            <span class="lang-content active" data-lang="ru">Дорога к Альбе — уже сама по себе красива</span>
+            <span class="lang-content" data-lang="be">Дарога да Альбы — ужо сама па сабе прыгожая</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- MINSK -->
+      <div class="routes__panel" id="panel-minsk">
+        <div>
+          <div class="route__steps">
+            <div class="route__step">
+              <div class="route__step-line">
+                <div class="route__step-dot route__step-dot--accent">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                </div>
+                <div class="route__step-connector"></div>
+              </div>
+              <div class="route__step-body">
+                <div class="route__step-label"><span class="lang-content active" data-lang="ru">Минск</span><span class="lang-content" data-lang="be">Мінск</span></div>
+                <div class="route__step-title"><span class="lang-content active" data-lang="ru">На машине: трасса М1/Е30</span><span class="lang-content" data-lang="be">На машыне: трасса М1/Е30</span></div>
+                <p class="route__step-desc"><span class="lang-content active" data-lang="ru">Из Минска по трассе М1 на запад. Съезд на Несвиж через Городею или Клецк. Всего ~120 км, около 1,5 часов.</span><span class="lang-content" data-lang="be">З Мінска па трасе М1 на захад. З'езд на Нясвіж праз Гарадзею або Клецк. Усяго ~120 км, каля 1,5 гадзін.</span></p>
+              </div>
+            </div>
+            <div class="route__step">
+              <div class="route__step-line">
+                <div class="route__step-dot">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="22" height="13" rx="2"/><path d="M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                </div>
+                <div class="route__step-connector"></div>
+              </div>
+              <div class="route__step-body">
+                <div class="route__step-label"><span class="lang-content active" data-lang="ru">Автобус</span><span class="lang-content" data-lang="be">Аўтобус</span></div>
+                <div class="route__step-title"><span class="lang-content active" data-lang="ru">Автовокзал Минск — Несвиж</span><span class="lang-content" data-lang="be">Аўтавакзал Мінск — Нясвіж</span></div>
+                <p class="route__step-desc"><span class="lang-content active" data-lang="ru">Ежедневные рейсы с Центрального автовокзала Минска. В пути ~2 часа. Из Несвижа до Альбы — такси (7 мин) или пешком (52 мин).</span><span class="lang-content" data-lang="be">Штодзённыя рэйсы з Цэнтральнага аўтавакзала Мінска. У дарозе ~2 гадзіны. З Нясвіжа да Альбы — таксі (7 хвілін) або пешшу.</span></p>
+              </div>
+            </div>
+            <div class="route__step">
+              <div class="route__step-line">
+                <div class="route__step-dot route__step-dot--accent">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg>
+                </div>
+              </div>
+              <div class="route__step-body">
+                <div class="route__step-label"><span class="lang-content active" data-lang="ru">Финиш</span><span class="lang-content" data-lang="be">Фініш</span></div>
+                <div class="route__step-title"><span class="lang-content active" data-lang="ru">Парк Альба</span><span class="lang-content" data-lang="be">Парк Альба</span></div>
+                <p class="route__step-desc"><span class="lang-content active" data-lang="ru">Оптимально: приехать в Несвиж утром, посетить замок, пообедать, в обед — Альба, вечером уехать. Всё умещается в один день.</span><span class="lang-content" data-lang="be">Аптымальна: прыехаць у Нясвіж раніцай, наведаць замак, пообедать, у абед — Альба, увечары з'ехаць.</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="route__tip">
+            <strong><span class="lang-content active" data-lang="ru">Совет:</span><span class="lang-content" data-lang="be">Парада:</span></strong>
+            <span class="lang-content active" data-lang="ru"> Если едете на автобусе, заранее договоритесь с местным таксистом на поездку до Альбы — они знают это место.</span>
+            <span class="lang-content" data-lang="be"> Калі едзеце на аўтобусе, загадзя дамоўцеся з мясцовым таксістам на паездку да Альбы — яны ведаюць гэтае месца.</span>
+          </div>
+        </div>
+        <div>
+          <img class="route__img route__img--wide"
+            src="img/scrin-map.png"
+            alt="Карта Google — расположение парка Альба относительно Несвижа">
+          <p class="route__img-caption">
+            <span class="lang-content active" data-lang="ru">Спутниковый вид: Альба слева, Несвиж справа. Видна система каналов</span>
+            <span class="lang-content" data-lang="be">Спадарожнікавы від: Альба злева, Нясвіж справа. Відна сістэма каналаў</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- WALK -->
+      <div class="routes__panel" id="panel-walk">
+        <div>
+          <div class="route__steps">
+            <div class="route__step">
+              <div class="route__step-line">
+                <div class="route__step-dot route__step-dot--accent">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                </div>
+                <div class="route__step-connector"></div>
+              </div>
+              <div class="route__step-body">
+                <div class="route__step-label"><span class="lang-content active" data-lang="ru">Старт</span><span class="lang-content" data-lang="be">Старт</span></div>
+                <div class="route__step-title"><span class="lang-content active" data-lang="ru">Несвижский замок</span><span class="lang-content" data-lang="be">Нясвіжскі замак</span></div>
+                <p class="route__step-desc"><span class="lang-content active" data-lang="ru">Выходите из замка и идите через центр города на запад по улице Ленинской.</span><span class="lang-content" data-lang="be">Выходзьце з замка і ідзіце праз цэнтр горада на захад па вуліцы Леніна.</span></p>
+              </div>
+            </div>
+            <div class="route__step">
+              <div class="route__step-line">
+                <div class="route__step-dot">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </div>
+                <div class="route__step-connector"></div>
+              </div>
+              <div class="route__step-body">
+                <div class="route__step-label"><span class="lang-content active" data-lang="ru">~25 минут</span><span class="lang-content" data-lang="be">~25 хвілін</span></div>
+                <div class="route__step-title"><span class="lang-content active" data-lang="ru">Центр Несвижа</span><span class="lang-content" data-lang="be">Цэнтр Нясвіжа</span></div>
+                <p class="route__step-desc"><span class="lang-content active" data-lang="ru">По пути — ратуша, Фарный костёл, Слуцкая брама. Хорошее время их осмотреть. Дальше — улица Дзержинского на запад.</span><span class="lang-content" data-lang="be">Па шляху — ратуша, Фарны касцёл, Слуцкая брама. Далей — вуліца Дзяржынскага на захад.</span></p>
+              </div>
+            </div>
+            <div class="route__step">
+              <div class="route__step-line">
+                <div class="route__step-dot route__step-dot--accent">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg>
+                </div>
+              </div>
+              <div class="route__step-body">
+                <div class="route__step-label"><span class="lang-content active" data-lang="ru">52 минуты итого</span><span class="lang-content" data-lang="be">52 хвіліны ўсяго</span></div>
+                <div class="route__step-title"><span class="lang-content active" data-lang="ru">Парк Альба</span><span class="lang-content" data-lang="be">Парк Альба</span></div>
+                <p class="route__step-desc"><span class="lang-content active" data-lang="ru">Через посёлок Альба прямо до входа в парк. Дорога живописная — поля, деревья, тишина.</span><span class="lang-content" data-lang="be">Праз пасёлак Альба прама да ўваходу ў парк. Дарога маляўнічая — палі, дрэвы, цішыня.</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="route__tip">
+            <strong><span class="lang-content active" data-lang="ru">Совет:</span><span class="lang-content" data-lang="be">Парада:</span></strong>
+            <span class="lang-content active" data-lang="ru"> Пешая прогулка из Несвижа в Альбу и обратно — отличный вариант для тех, кто любит ходить. Туда-обратно ~10 км, красивая дорога через поля и посёлок.</span>
+            <span class="lang-content" data-lang="be"> Пешая прагулка з Нясвіжа ў Альбу і назад — выдатны варыянт. Туды-назад ~10 км, прыгожая дарога праз палі і пасёлак.</span>
+          </div>
+        </div>
+        <div>
+          <img class="route__img route__img--wide"
+            src="img/road-to-alba.webp"
+            alt="Дорога к парку Альба — аллея деревьев летом">
+          <p class="route__img-caption">
+            <span class="lang-content active" data-lang="ru">Дорога через посёлок Альба — уже часть впечатления</span>
+            <span class="lang-content" data-lang="be">Дарога праз пасёлак Альба — ужо частка ўражання</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- TAXI -->
+      <div class="routes__panel" id="panel-taxi">
+        <div>
+          <div class="route__steps">
+            <div class="route__step">
+              <div class="route__step-line">
+                <div class="route__step-dot route__step-dot--accent">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                </div>
+                <div class="route__step-connector"></div>
+              </div>
+              <div class="route__step-body">
+                <div class="route__step-label"><span class="lang-content active" data-lang="ru">Вызов такси</span><span class="lang-content" data-lang="be">Выклік таксі</span></div>
+                <div class="route__step-title"><span class="lang-content active" data-lang="ru">Яндекс.Такси или местные</span><span class="lang-content" data-lang="be">Яндэкс.Такси або мясцовыя</span></div>
+                <p class="route__step-desc"><span class="lang-content active" data-lang="ru">В Несвиже работает Яндекс.Такси. Есть также местные таксисты — их можно найти у автовокзала или попросить в любом кафе подсказать номер.</span><span class="lang-content" data-lang="be">У Нясвіжы працуе Яндэкс.Такси. Ёсць таксама мясцовыя таксісты — іх можна знайсці ля аўтавакзала.</span></p>
+              </div>
+            </div>
+            <div class="route__step">
+              <div class="route__step-line">
+                <div class="route__step-dot">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </div>
+                <div class="route__step-connector"></div>
+              </div>
+              <div class="route__step-body">
+                <div class="route__step-label"><span class="lang-content active" data-lang="ru">Адрес</span><span class="lang-content" data-lang="be">Адрас</span></div>
+                <div class="route__step-title"><span class="lang-content active" data-lang="ru">Что сказать водителю</span><span class="lang-content" data-lang="be">Што сказаць вадзіцелю</span></div>
+                <p class="route__step-desc"><span class="lang-content active" data-lang="ru">«Посёлок Альба, лесопарк» или дайте координаты 53.202766, 26.642774. Местные таксисты знают это место.</span><span class="lang-content" data-lang="be">«Пасёлак Альба, лесапарк» або дайце каардынаты 53.202766, 26.642774. Мясцовыя таксісты ведаюць гэтае месца.</span></p>
+              </div>
+            </div>
+            <div class="route__step">
+              <div class="route__step-line">
+                <div class="route__step-dot route__step-dot--accent">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg>
+                </div>
+              </div>
+              <div class="route__step-body">
+                <div class="route__step-label"><span class="lang-content active" data-lang="ru">7 минут · ~5 BYN</span><span class="lang-content" data-lang="be">7 хвілін · ~5 BYN</span></div>
+                <div class="route__step-title"><span class="lang-content active" data-lang="ru">Парк Альба</span><span class="lang-content" data-lang="be">Парк Альба</span></div>
+                <p class="route__step-desc"><span class="lang-content active" data-lang="ru">Договоритесь с водителем сразу о обратной поездке или возьмите его номер — в парке связь может быть слабой.</span><span class="lang-content" data-lang="be">Дамоўцеся з вадзіцелем адразу пра зваротную паездку або вазьміце яго нумар — у парку сувязь можа быць слабой.</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="route__tip">
+            <strong><span class="lang-content active" data-lang="ru">Совет:</span><span class="lang-content" data-lang="be">Парада:</span></strong>
+            <span class="lang-content active" data-lang="ru"> Лучший вариант если вы на автобусе — взять такси в оба конца. Туда-обратно + ожидание ~30-40 минут обойдётся недорого.</span>
+            <span class="lang-content" data-lang="be"> Лепшы варыянт калі вы на аўтобусе — узяць таксі ў абодва канцы. Туды-назад + чаканне ~30-40 хвілін абыдзецца танна.</span>
+          </div>
+        </div>
+        <div>
+          <img class="route__img route__img--wide"
+            src="img/canal-swans.webp"
+            alt="Вход в парк Альба — аллея ведущая к каналам">
+          <p class="route__img-caption">
+            <span class="lang-content active" data-lang="ru">Попросите водителя подвезти прямо ко входу на главную аллею</span>
+            <span class="lang-content" data-lang="be">Папрасіце вадзіцеля падвезці прама да ўваходу на галоўную алею</span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- IN PARK -->
+<section class="in-park" id="in-park">
+  <div class="in-park__inner">
+    <p class="section__eyebrow">
+      <span class="lang-content active" data-lang="ru">Внутри парка</span>
+      <span class="lang-content" data-lang="be">Унутры парку</span>
+    </p>
+    <h2 class="section__title">
+      <span class="lang-content active" data-lang="ru">Что найти в Альбе</span>
+      <span class="lang-content" data-lang="be">Што знайсці ў Альбе</span>
+    </h2>
+    <div class="in-park__grid">
+      <div>
+        <img class="in-park__map-img"
+          src="img/scrin-map.png"
+          alt="Спутниковая карта парка Альба — видна система каналов звездой">
+        <p style="margin-top:0.75rem;font-size:0.75rem;color:var(--muted);font-style:italic;">
+          <span class="lang-content active" data-lang="ru">Спутниковый снимок Альбы. Круглое озеро с каналами — в центре слева</span>
+          <span class="lang-content" data-lang="be">Спадарожнікавы здымак Альбы. Круглае возера з каналамі — у цэнтры злева</span>
+        </p>
+      </div>
+      <div class="poi-list">
+        <div class="poi">
+          <div class="poi__num">01</div>
+          <div>
+            <div class="poi__title"><span class="lang-content active" data-lang="ru">Главная аллея</span><span class="lang-content" data-lang="be">Галоўная алея</span></div>
+            <p class="poi__desc"><span class="lang-content active" data-lang="ru">Старейшая парковая аллея Беларуси. Начинается у въезда и ведёт к центральному озеру. ~800 м в одну сторону.</span><span class="lang-content" data-lang="be">Найстарэйшая паркавая алея Беларусі. Пачынаецца ля ўезда і вядзе да цэнтральнага возера.</span></p>
+          </div>
+        </div>
+        <div class="poi">
+          <div class="poi__num">02</div>
+          <div>
+            <div class="poi__title"><span class="lang-content active" data-lang="ru">Круглое озеро с островом</span><span class="lang-content" data-lang="be">Круглае возера з выспай</span></div>
+            <p class="poi__desc"><span class="lang-content active" data-lang="ru">Центр всей системы каналов. Когда-то на острове стояла копия Святой Софии. Сейчас — дикая природа.</span><span class="lang-content" data-lang="be">Цэнтр усёй сістэмы каналаў. Калісьці на выспе стаяла копія Сафіі. Зараз — дзікая прырода.</span></p>
+          </div>
+        </div>
+        <div class="poi">
+          <div class="poi__num">03</div>
+          <div>
+            <div class="poi__title"><span class="lang-content active" data-lang="ru">Система 8 каналов</span><span class="lang-content" data-lang="be">Сістэма 8 каналаў</span></div>
+            <p class="poi__desc"><span class="lang-content active" data-lang="ru">Расходятся звездой от озера. Прокопаны вручную в XVIII веке. Видны из космоса. По берегам — ивы и ольха.</span><span class="lang-content" data-lang="be">Расходзяцца зоркай ад возера. Выкапаны ўручную ў XVIII стагоддзі. Відаць з космасу.</span></p>
+          </div>
+        </div>
+        <div class="poi">
+          <div class="poi__num">04</div>
+          <div>
+            <div class="poi__title"><span class="lang-content active" data-lang="ru">Вековые дубы</span><span class="lang-content" data-lang="be">Вякавыя дубы</span></div>
+            <p class="poi__desc"><span class="lang-content active" data-lang="ru">Несколько дубов возрастом 400–500 лет. В три обхвата. Ищите в глубине парка, в стороне от главной аллеи.</span><span class="lang-content" data-lang="be">Некалькі дубоў узростам 400–500 гадоў. У тры абхваты. Шукайце ў глыбіні парку.</span></p>
+          </div>
+        </div>
+        <div class="poi">
+          <div class="poi__num">05</div>
+          <div>
+            <div class="poi__title"><span class="lang-content active" data-lang="ru">Здание винокурни</span><span class="lang-content" data-lang="be">Будынак вінакурні</span></div>
+            <p class="poi__desc"><span class="lang-content active" data-lang="ru">На краю посёлка Альба. Памятник историко-культурного наследия XVII–XVIII вв. С готическими окнами.</span><span class="lang-content" data-lang="be">На ўскраіне пасёлка Альба. Помнік гісторыка-культурнай спадчыны XVII–XVIII стст.</span></p>
+          </div>
+        </div>
+        <div class="poi">
+          <div class="poi__num">06</div>
+          <div>
+            <div class="poi__title"><span class="lang-content active" data-lang="ru">Птицы и дикие животные</span><span class="lang-content" data-lang="be">Птушкі і дзікія жывёлы</span></div>
+            <p class="poi__desc"><span class="lang-content active" data-lang="ru">На каналах — лебеди, утки, цапли. В лесу — косули, зайцы. Возьмите бинокль если есть.</span><span class="lang-content" data-lang="be">На каналах — лебедзі, качкі, чаплі. У лесе — казулі, зайцы. Вазьміце бінокль калі ёсць.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICAL -->
+<section class="practical" id="practical">
+  <div class="practical__inner">
+    <p class="section__eyebrow">
+      <span class="lang-content active" data-lang="ru">Перед поездкой</span>
+      <span class="lang-content" data-lang="be">Перад паездкай</span>
+    </p>
+    <h2 class="section__title">
+      <span class="lang-content active" data-lang="ru">Важно знать</span>
+      <span class="lang-content" data-lang="be">Важна ведаць</span>
+    </h2>
+    <div class="practical__grid">
+      <div class="practical__card">
+        <svg class="practical__icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="20" cy="20" r="16"/><path d="M20 12v8l5 3"/>
+        </svg>
+        <div class="practical__title"><span class="lang-content active" data-lang="ru">Когда ехать</span><span class="lang-content" data-lang="be">Калі ехаць</span></div>
+        <p class="practical__text">
+          <span class="lang-content active" data-lang="ru"><strong>Лучшее время:</strong> май–октябрь. Май — первая зелень и разлив каналов. Сентябрь–октябрь — золотая осень. Зима красива но сложнее ходить. Избегайте ранней весны — земля переувлажнена.</span>
+          <span class="lang-content" data-lang="be"><strong>Лепшы час:</strong> май–кастрычнік. Травень — першая зелень і разліў каналаў. Верасень–кастрычнік — залатая восень. Зіма прыгожая але цяжэй хадзіць.</span>
+        </p>
+      </div>
+      <div class="practical__card">
+        <svg class="practical__icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 4C20 4 10 12 10 21a10 10 0 0 0 20 0C30 12 20 4 20 4z"/>
+          <path d="M14 24q3-4 6 0q3-4 6 0"/>
+        </svg>
+        <div class="practical__title"><span class="lang-content active" data-lang="ru">Обувь и одежда</span><span class="lang-content" data-lang="be">Абутак і адзенне</span></div>
+        <p class="practical__text">
+          <span class="lang-content active" data-lang="ru"><strong>Обязательно:</strong> удобная закрытая обувь. После дождя — резиновые сапоги. Парк не благоустроен — дорожки могут быть мокрыми. Летом — от комаров. Весной/осенью — тёплый слой.</span>
+          <span class="lang-content" data-lang="be"><strong>Абавязкова:</strong> зручны закрыты абутак. Пасля дажджу — гумовыя боты. Парк не добраўпарадкаваны — дарожкі могуць быць мокрымі.</span>
+        </p>
+      </div>
+      <div class="practical__card">
+        <svg class="practical__icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="8" y="8" width="24" height="24" rx="3"/>
+          <path d="M8 16h24M16 8v24"/>
+        </svg>
+        <div class="practical__title"><span class="lang-content active" data-lang="ru">Инфраструктура</span><span class="lang-content" data-lang="be">Інфраструктура</span></div>
+        <p class="practical__text">
+          <span class="lang-content active" data-lang="ru">В парке <strong>нет</strong>: туалетов, кафе, скамеек, указателей, официальных тропинок. Это его очарование и его сложность. Возьмите воду и еду. Мусор уносите с собой.</span>
+          <span class="lang-content" data-lang="be">У парку <strong>няма</strong>: прыбіральняў, кавярняў, лавак, указальнікаў, афіцыйных сцежак. Гэта яго чароўнасць і яго складанасць. Вазьміце ваду і ежу.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta__inner">
+    <div>
+      <p class="cta__eyebrow">
+        <span class="lang-content active" data-lang="ru">Вы готовы</span>
+        <span class="lang-content" data-lang="be">Вы гатовы</span>
+      </p>
+      <h2 class="cta__title">
+        <span class="lang-content active" data-lang="ru">Пора ехать в Альбу</span>
+        <span class="lang-content" data-lang="be">Час ехаць у Альбу</span>
+      </h2>
+      <p class="cta__text">
+        <span class="lang-content active" data-lang="ru">Координаты: 53.202766, 26.642774. Вход свободный. Парк открыт круглосуточно. Расскажите об Альбе тем, кто едет в Несвиж.</span>
+        <span class="lang-content" data-lang="be">Каардынаты: 53.202766, 26.642774. Уваход свабодны. Парк адкрыты кругласутачна. Раскажыце пра Альбу тым, хто едзе ў Нясвіж.</span>
+      </p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="https://maps.google.com/?q=53.202766,26.642774" target="_blank" class="btn btn--light">
+          <span class="lang-content active" data-lang="ru">Открыть в Google Maps</span>
+          <span class="lang-content" data-lang="be">Адкрыць у Google Maps</span>
+        </a>
+        <a href="volunteer.html" class="btn" style="background:transparent;color:#F5F2EB;border:1px solid rgba(245,242,235,0.35);">
+          <span class="lang-content active" data-lang="ru">Помочь парку</span>
+          <span class="lang-content" data-lang="be">Дапамагчы парку</span>
+        </a>
+      </div>
+    </div>
+    <div class="cta__links">
+      <a href="index.html" class="cta__link">
+        <div class="cta__link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div><div class="cta__link-title"><span class="lang-content active" data-lang="ru">Главная об Альбе</span><span class="lang-content" data-lang="be">Галоўная пра Альбу</span></div><div class="cta__link-desc"><span class="lang-content active" data-lang="ru">История, галерея, факты</span><span class="lang-content" data-lang="be">Гісторыя, галерэя, факты</span></div></div>
+      </a>
+      <a href="history.html" class="cta__link">
+        <div class="cta__link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <div><div class="cta__link-title"><span class="lang-content active" data-lang="ru">История парка</span><span class="lang-content" data-lang="be">Гісторыя парку</span></div><div class="cta__link-desc"><span class="lang-content active" data-lang="ru">Радзивиллы, зоопарк, каналы</span><span class="lang-content" data-lang="be">Радзівілы, заапарк, каналы</span></div></div>
+      </a>
+      <a href="hidden-nesvizh.html" class="cta__link">
+        <div class="cta__link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <div><div class="cta__link-title"><span class="lang-content active" data-lang="ru">Несвиж без замка</span><span class="lang-content" data-lang="be">Нясвіж без замка</span></div><div class="cta__link-desc"><span class="lang-content active" data-lang="ru">Маршрут на весь день</span><span class="lang-content" data-lang="be">Маршрут на ўвесь дзень</span></div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div>
+        <a href="index.html" class="footer__logo">Альба</a>
+        <p class="footer__about"><span class="lang-content active" data-lang="ru">Информационный проект о парке Альба в Несвиже.</span><span class="lang-content" data-lang="be">Інфармацыйны праект пра парк Альба ў Нясвіжы.</span></p>
+      </div>
+      <div>
+        <p class="footer__heading"><span class="lang-content active" data-lang="ru">Страницы</span><span class="lang-content" data-lang="be">Старонкі</span></p>
+        <ul class="footer__links">
+          <li><a href="index.html"><span class="lang-content active" data-lang="ru">Главная</span><span class="lang-content" data-lang="be">Галоўная</span></a></li>
+          <li><a href="history.html"><span class="lang-content active" data-lang="ru">История</span><span class="lang-content" data-lang="be">Гісторыя</span></a></li>
+          <li><a href="hidden-nesvizh.html"><span class="lang-content active" data-lang="ru">Несвиж без замка</span><span class="lang-content" data-lang="be">Нясвіж без замка</span></a></li>
+          <li><a href="volunteer.html"><span class="lang-content active" data-lang="ru">Волонтёрам</span><span class="lang-content" data-lang="be">Валанцёрам</span></a></li>
+          <li><a href="how-to-get.html"><span class="lang-content active" data-lang="ru">Как добраться</span><span class="lang-content" data-lang="be">Як дабрацца</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__heading"><span class="lang-content active" data-lang="ru">Соцсети</span><span class="lang-content" data-lang="be">Сацсеткі</span></p>
+              <ul class="footer__links">
+          <li><a href="https://www.instagram.com/alba_neswizh/" target="_blank">Instagram @alba_neswizh</a></li>
+          <li><a href="https://vk.com/savealba" target="_blank">VK savealba</a></li>
+          <li><a href="https://t.me/alba_poselok_nesvisz" target="_blank">Telegram</a></li>
+          <li><a href="tel:+375291984942">+375 29 198-49-42</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span><span class="lang-content active" data-lang="ru">© 2025 Парк Альба, Несвиж. Волонтёрский проект.</span><span class="lang-content" data-lang="be">© 2025 Парк Альба, Нясвіж. Валанцёрскі праект.</span></span>
+      <div class="footer__social">
+        <a href="https://www.instagram.com/alba_neswizh/" target="_blank">Instagram</a>
+        <a href="https://vk.com/savealba" target="_blank">VK</a>
+        <a href="https://t.me/alba_poselok_nesvisz" target="_blank">Telegram</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function setLang(lang){document.querySelectorAll('.lang-content').forEach(el=>el.classList.toggle('active',el.dataset.lang===lang));document.querySelectorAll('.nav__lang button,.mob-menu__lang button').forEach(b=>b.classList.toggle('active',b.textContent.trim()===lang.toUpperCase()||(lang==='ru'&&b.textContent.includes('Русский'))||(lang==='be'&&b.textContent.includes('Беларускі'))));localStorage.setItem('alba-lang',lang);}
+function toggleMob(){var m=document.getElementById('mob-menu');var b=document.querySelector('.nav__burger');if(!m||!b)return;var o=m.classList.toggle('open');b.classList.toggle('open',o);document.body.style.overflow=o?'hidden':'';}
+document.addEventListener('click',function(e){var m=document.getElementById('mob-menu');var b=document.querySelector('.nav__burger');if(m&&m.classList.contains('open')&&!m.contains(e.target)&&b&&!b.contains(e.target)){m.classList.remove('open');b.classList.remove('open');document.body.style.overflow='';}});
+function openShare(){const url=window.location.href,title='Парк Альба — забытый Версаль Беларуси',text='Парк Альба в Несвиже — первый зоопарк Беларуси, старейшая аллея страны и система каналов XVI века. Его восстанавливают волонтёры!';if(navigator.share){navigator.share({title,text,url}).catch(()=>{});return;}const p=document.getElementById('share-popup');if(p){document.getElementById('share-url').value=url;p.classList.add('open');}}
+function closeShare(){const p=document.getElementById('share-popup');if(p)p.classList.remove('open');}
+function copyShareUrl(){const i=document.getElementById('share-url');i.select();document.execCommand('copy');document.querySelectorAll('.shr-copy-btn,.shr-cp').forEach(b=>{const t=b.innerHTML;b.innerHTML='✓';setTimeout(()=>b.innerHTML=t,2000);});}
+function shareVk(){const u=encodeURIComponent(window.location.href);window.open('https://vk.com/share.php?url='+u,'_blank');}
+function shareTg(){const u=encodeURIComponent(window.location.href),t=encodeURIComponent('Парк Альба — забытый Версаль Беларуси');window.open('https://t.me/share/url?url='+u+'&text='+t,'_blank');}
+function shareWa(){const u=encodeURIComponent(window.location.href),t=encodeURIComponent('Парк Альба в Несвиже — первый зоопарк Беларуси и старейшая аллея страны: ');window.open('https://wa.me/?text='+t+u,'_blank');}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeShare();});
+window.addEventListener('scroll',()=>{const n=document.querySelector('.nav');if(n)n.style.boxShadow=window.scrollY>20?'0 2px 20px rgba(46,64,42,0.1)':'none';});
+const _obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}},{threshold:0.08}));
+document.querySelectorAll('.facts__card,.history__item,.volunteer__way,.stats__item,.place-card,.plan__step,.practical__card,.cta__link,.cta__card,.event,.fact-pill,.today__card,.way-card,.subbotnik-card,.contact-card,.next-event__detail,.poi,.route__step').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity .5s ease,transform .5s ease';_obs.observe(el);});
+const _sl=localStorage.getItem('alba-lang');if(_sl&&_sl!=='ru')setLang(_sl);
+
+</script>
+</body>
+</html>
