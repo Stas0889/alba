@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Волонтёрам — помочь парку Альба Несвиж | Субботники и восстановление</title>
+<meta name="description" content="Помогите восстановить парк Альба в Несвиже. Субботники, расчистка аллей и каналов. Как стать волонтёром, ближайшие события, контакты.">
+<meta property="og:title" content="Помогите Альбе вернуться — волонтёрский проект">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+@font-face {
+  font-family: 'Arkhip';
+  src: url('Arkhip-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green: #2E402A; --green-btn: #2D4126; --green-hover: #3D5635;
+  --bg: #EEEADF; --card-bg: #F5F2EB; --text: #232323;
+  --muted: #495547; --accent: #C4A35A; --border: #D4CFC4;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+
+
+/* BTN */
+.btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.75rem 1.5rem; border-radius: 5px; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 500; text-decoration: none; letter-spacing: 0.03em; cursor: pointer; transition: all 0.25s; border: none; white-space: nowrap; }
+.btn--primary { background: var(--green-btn); color: #F5F2EB; }
+.btn--primary:hover { background: var(--green-hover); transform: translateY(-1px); }
+.btn--outline { background: transparent; color: var(--green); border: 1px solid var(--green); }
+.btn--outline:hover { background: var(--green); color: #F5F2EB; }
+.btn--light { background: #F5F2EB; color: var(--green); }
+.btn--light:hover { background: #fff; transform: translateY(-1px); }
+.btn--accent { background: var(--accent); color: #fff; }
+.btn--accent:hover { background: #b8922a; transform: translateY(-1px); }
+
+/* HERO */
+.hero { padding-top: 60px; background: var(--green); position: relative; overflow: hidden; }
+.hero::before { content: 'АЛЬБА'; position: absolute; right: -3rem; bottom: -2rem; font-family: 'Arkhip', sans-serif; font-size: 16rem; color: rgba(255,255,255,0.04); pointer-events: none; letter-spacing: -0.05em; line-height: 1; }
+.hero__inner { max-width: 1100px; margin: 0 auto; padding: 5rem 2.5rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; position: relative; z-index: 1; }
+.hero__eyebrow { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.25rem; font-weight: 500; }
+.hero__title { font-family: 'Arkhip', sans-serif; font-size: clamp(2rem, 4.5vw, 3.25rem); color: #F5F2EB; line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 1.5rem; }
+.hero__sub { font-size: 1rem; color: rgba(245,242,235,0.65); line-height: 1.75; font-weight: 300; margin-bottom: 2.5rem; }
+.hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero__img-wrap { position: relative; }
+.hero__img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 8px; display: block; }
+.hero__img-stat { position: absolute; bottom: -1.5rem; left: -1.5rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+.hero__img-stat-num { font-family: 'Arkhip', sans-serif; font-size: 2rem; color: var(--green); line-height: 1; margin-bottom: 0.25rem; }
+.hero__img-stat-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; line-height: 1.4; }
+
+/* SECTION */
+.section { padding: 5rem 2.5rem; }
+.section__inner { max-width: 1100px; margin: 0 auto; }
+.section__eyebrow { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; font-weight: 500; }
+.section__title { font-family: 'Arkhip', sans-serif; font-size: clamp(1.6rem, 3vw, 2.4rem); color: var(--green); line-height: 1.2; margin-bottom: 1rem; }
+.section__lead { font-size: 1rem; color: var(--muted); line-height: 1.75; max-width: 640px; margin-bottom: 3rem; }
+.divider { width: 36px; height: 2px; background: var(--accent); margin: 1.25rem 0; }
+
+/* WHY */
+.why { background: var(--bg); }
+.why__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: stretch; }
+.why__text p { font-size: 1rem; color: var(--muted); line-height: 1.85; margin-bottom: 1.25rem; }
+.why__text p:last-child { margin-bottom: 0; }
+.why__text strong { color: var(--text); font-weight: 500; }
+.why__img { width: 100%; height: 100%; min-height: 400px; object-fit: cover; border-radius: 8px; display: block; }
+
+/* WAYS TO HELP */
+.ways { background: var(--card-bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.ways__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+.way-card { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 2rem; transition: transform 0.25s, box-shadow 0.25s; }
+.way-card:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(46,64,42,0.08); }
+.way-card__icon { width: 48px; height: 48px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; color: var(--green); }
+.way-card__icon svg { width: 24px; height: 24px; }
+.way-card__title { font-family: 'Arkhip', sans-serif; font-size: 1rem; color: var(--green); margin-bottom: 0.6rem; }
+.way-card__text { font-size: 0.875rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.25rem; }
+.way-card__tag { display: inline-block; padding: 3px 10px; background: rgba(196,163,90,0.12); border: 1px solid rgba(196,163,90,0.3); border-radius: 20px; font-size: 0.72rem; color: #7A5A00; letter-spacing: 0.04em; }
+
+/* SUBBOTNIKS */
+.subbotniks { background: var(--bg); }
+.subbotniks__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; }
+.subbotnik-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.subbotnik-card__img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+.subbotnik-card__body { padding: 1.5rem; }
+.subbotnik-card__date { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 0.4rem; }
+.subbotnik-card__title { font-family: 'Arkhip', sans-serif; font-size: 1rem; color: var(--green); margin-bottom: 0.6rem; line-height: 1.3; }
+.subbotnik-card__text { font-size: 0.875rem; color: var(--muted); line-height: 1.7; }
+.subbotnik-card__result { display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap; }
+.subbotnik-card__result-item { font-size: 0.78rem; color: var(--muted); display: flex; align-items: center; gap: 0.3rem; }
+.subbotnik-card__result-item::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+
+/* NEXT EVENT */
+.next-event { background: var(--green); padding: 4rem 2.5rem; }
+.next-event__inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.next-event__eyebrow { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; font-weight: 500; }
+.next-event__title { font-family: 'Arkhip', sans-serif; font-size: clamp(1.5rem, 2.5vw, 2.2rem); color: #F5F2EB; line-height: 1.2; margin-bottom: 1.25rem; }
+.next-event__text { font-size: 0.95rem; color: rgba(245,242,235,0.65); line-height: 1.75; margin-bottom: 2rem; }
+.next-event__details { display: flex; flex-direction: column; gap: 0.75rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 1.5rem; }
+.next-event__detail { display: flex; gap: 1rem; align-items: flex-start; }
+.next-event__detail-icon { width: 32px; height: 32px; border-radius: 6px; background: rgba(196,163,90,0.15); border: 1px solid rgba(196,163,90,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent); }
+.next-event__detail-icon svg { width: 16px; height: 16px; }
+.next-event__detail-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(245,242,235,0.4); margin-bottom: 0.2rem; }
+.next-event__detail-val { font-size: 0.9rem; color: #F5F2EB; font-weight: 500; }
+
+/* GALLERY STRIP */
+.gallery-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-top: 3rem; }
+.gallery-strip__item { overflow: hidden; border-radius: 6px; aspect-ratio: 1; }
+.gallery-strip__item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+.gallery-strip__item:hover img { transform: scale(1.06); }
+
+/* ABOUT PERSON */
+.about-person { background: var(--card-bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.about-person__grid { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: center; }
+.about-person__img-wrap { position: relative; }
+.about-person__img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; display: block; object-position: center top; }
+.about-person__name { font-family: 'Arkhip', sans-serif; font-size: 1.4rem; color: var(--green); margin-bottom: 0.5rem; }
+.about-person__role { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); font-weight: 500; margin-bottom: 1.5rem; }
+.about-person__text p { font-size: 1rem; color: var(--muted); line-height: 1.85; margin-bottom: 1.25rem; }
+.about-person__text p:last-child { margin-bottom: 0; }
+.about-person__text strong { color: var(--text); font-weight: 500; }
+.about-person__socials { display: flex; gap: 0.75rem; margin-top: 1.5rem; flex-wrap: wrap; }
+
+/* CONTACTS */
+.contacts { background: var(--bg); }
+.contacts__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+.contact-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.75rem; display: flex; flex-direction: column; gap: 0.75rem; transition: transform 0.25s, box-shadow 0.25s; text-decoration: none; }
+.contact-card:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(46,64,42,0.08); }
+.contact-card__icon { width: 44px; height: 44px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--green); }
+.contact-card__icon svg { width: 22px; height: 22px; }
+.contact-card__platform { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); font-weight: 500; }
+.contact-card__handle { font-family: 'Arkhip', sans-serif; font-size: 0.95rem; color: var(--green); }
+.contact-card__desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+
+/* LANG */
+.lang-content { display: none; }
+.lang-content.active { display: block; }
+span.lang-content { display: none; }
+span.lang-content.active { display: inline; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .hero__inner, .why__grid, .next-event__inner, .about-person__grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .ways__grid, .contacts__grid { grid-template-columns: 1fr 1fr; }
+  .subbotniks__grid { grid-template-columns: 1fr; }
+  .footer__top { grid-template-columns: 1fr 1fr; }
+  .hero__img-stat { left: 0; }
+  .gallery-strip { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 768px) {
+  .nav { padding: 0 1.25rem; }
+  .nav__links { display: none; }
+  .hero__inner, .section, .next-event, .about-person, .contacts { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .ways__grid, .contacts__grid { grid-template-columns: 1fr; }
+  .gallery-strip { grid-template-columns: repeat(2, 1fr); }
+  .footer__top { grid-template-columns: 1fr; gap: 2rem; }
+  .footer__bottom { flex-direction: column; gap: 1rem; text-align: center; }
+}
+
+
+
+/* ── SHARE POPUP ── */
+.share-popup{display:none;position:fixed;inset:0;z-index:200;align-items:center;justify-content:center;background:rgba(0,0,0,.45);padding:1.5rem;}
+.share-popup.open{display:flex;}
+.share-popup__box{background:var(--card-bg);border-radius:12px;padding:2rem;width:100%;max-width:420px;box-shadow:0 20px 60px rgba(0,0,0,.2);}
+.share-popup__title{font-family:'Arkhip',sans-serif;font-size:1.1rem;color:var(--green);margin-bottom:.4rem;}
+.share-popup__sub{font-size:.83rem;color:var(--muted);line-height:1.55;margin-bottom:1.5rem;}
+.share-popup__socials{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.25rem;}
+.shr-btn{display:flex;align-items:center;gap:.55rem;padding:.7rem .9rem;border-radius:6px;font-size:.83rem;font-weight:500;text-decoration:none;transition:opacity .2s;border:none;cursor:pointer;font-family:'Inter',sans-serif;}
+.shr-btn:hover{opacity:.85;}
+.shr-btn svg{width:17px;height:17px;flex-shrink:0;}
+.shr-vk{background:#0077FF;color:#fff;}
+.shr-tg{background:#26A5E4;color:#fff;}
+.shr-wa{background:#25D366;color:#fff;}
+.shr-cp{background:var(--bg);color:var(--text);border:1px solid var(--border);}
+.share-popup__url-row{display:flex;gap:.5rem;margin-bottom:1rem;}
+.share-popup__url-row input{flex:1;padding:.55rem .8rem;border:1px solid var(--border);border-radius:5px;font-size:.78rem;color:var(--muted);background:var(--bg);font-family:'Inter',sans-serif;min-width:0;}
+.shr-copy-btn{padding:.55rem .9rem;background:var(--green-btn);color:#F5F2EB;border:none;border-radius:5px;font-size:.78rem;font-weight:500;cursor:pointer;white-space:nowrap;font-family:'Inter',sans-serif;transition:background .2s;}
+.shr-copy-btn:hover{background:var(--green-hover);}
+.share-popup__close{text-align:right;}
+.share-popup__close button{background:none;border:none;font-size:.83rem;color:var(--muted);cursor:pointer;font-family:'Inter',sans-serif;}
+.share-popup__close button:hover{color:var(--green);}
+
+</style>
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="Webclip.png">
+</head>
+<body>
+<script src="navbar.js"></script>
+
+<div class="mob-menu__lang">
+      <button class="active" onclick="setLang('ru');toggleMob()">Русский</button>
+      <button onclick="setLang('be');toggleMob()">Беларускі</button>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__inner">
+    <div>
+      <p class="hero__eyebrow">
+        <span class="lang-content active" data-lang="ru">Волонтёрский проект · с 2020 года</span>
+        <span class="lang-content" data-lang="be">Валанцёрскі праект · з 2020 года</span>
+      </p>
+      <h1 class="hero__title">
+        <span class="lang-content active" data-lang="ru">Помогите Альбе вернуться</span>
+        <span class="lang-content" data-lang="be">Дапамажыце Альбе вярнуцца</span>
+      </h1>
+      <p class="hero__sub">
+        <span class="lang-content active" data-lang="ru">400-летний парк восстанавливают обычные люди — своими руками, в выходные дни. Каждый субботник — это несколько метров возвращённых аллей. Присоединяйтесь.</span>
+        <span class="lang-content" data-lang="be">400-гадовы парк аднаўляюць звычайныя людзі — уласнымі рукамі, у выхадныя дні. Кожны суботнік — гэта некалькі метраў вернутых алей. Далучайцеся.</span>
+      </p>
+      <div class="hero__actions">
+        <a href="#next-event" class="btn btn--light">
+          <span class="lang-content active" data-lang="ru">Ближайший субботник</span>
+          <span class="lang-content" data-lang="be">Бліжэйшы суботнік</span>
+        </a>
+        <a href="#ways" class="btn" style="background:transparent;color:#F5F2EB;border:1px solid rgba(245,242,235,0.35);">
+          <span class="lang-content active" data-lang="ru">Другие способы помочь</span>
+          <span class="lang-content" data-lang="be">Іншыя спосабы дапамагчы</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero__img-wrap">
+      <img class="hero__img"
+        src="https://raw.githubusercontent.com/Stas0889/alba/main/img/anna-polyn-organizator.webp"
+        alt="Волонтёрский субботник в парке Альба — расчистка леса">
+      <div class="hero__img-stat">
+        <div class="hero__img-stat-num">2020</div>
+        <div class="hero__img-stat-label">
+          <span class="lang-content active" data-lang="ru">Первый субботник</span>
+          <span class="lang-content" data-lang="be">Першы суботнік</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="section why" id="why">
+  <div class="section__inner">
+    <div class="why__grid">
+      <div>
+        <p class="section__eyebrow">
+          <span class="lang-content active" data-lang="ru">Почему это важно</span>
+          <span class="lang-content" data-lang="be">Чаму гэта важна</span>
+        </p>
+        <h2 class="section__title">
+          <span class="lang-content active" data-lang="ru">Парк умирает без внимания</span>
+          <span class="lang-content" data-lang="be">Парк гіне без увагі</span>
+        </h2>
+        <div class="divider"></div>
+        <div class="why__text">
+          <p>
+            <span class="lang-content active" data-lang="ru">Альба — <strong>памятник природы и истории</strong>, которому нет равных в Беларуси. Первый зоопарк, старейшая аллея, система каналов XVI–XVIII веков. Но официального статуса особо охраняемой территории у парка нет, и ресурсов на восстановление — тоже.</span>
+            <span class="lang-content" data-lang="be">Альба — <strong>помнік прыроды і гісторыі</strong>, якому няма роўных у Беларусі. Але афіцыйнага статусу асабліва ахоўнай тэрыторыі ў парку няма, і рэсурсаў на аднаўленне — таксама.</span>
+          </p>
+          <p>
+            <span class="lang-content active" data-lang="ru">Каналы зарастают и переувлажняются. Аллеи перекрыты упавшими деревьями. О парке не знают даже многие несвижане. Если не расчищать и не рассказывать — он исчезнет окончательно.</span>
+            <span class="lang-content" data-lang="be">Каналы зарастаюць. Алеі перакрытыя ўпалымі дрэвамі. Пра парк не ведаюць нават многія нясвіжане. Калі не расчышчаць і не расказваць — ён знікне канчаткова.</span>
+          </p>
+          <p>
+            <span class="lang-content active" data-lang="ru">Именно поэтому с 2020 года <strong>Анна Полын</strong> собирает волонтёров на регулярные субботники. Городской исполком и лесхоз поддерживают инициативу — но рук не хватает.</span>
+            <span class="lang-content" data-lang="be">Менавіта таму з 2020 года <strong>Ганна Полын</strong> збірае валанцёраў на рэгулярныя суботнікі. Гарадскі выканкам і лясгас падтрымліваюць ініцыятыву — але рук не хапае.</span>
+          </p>
+        </div>
+      </div>
+      <div>
+        <img class="why__img"
+          src="https://raw.githubusercontent.com/Stas0889/alba/main/img/group-of-volunteers.webp"
+          alt="Группа волонтёров у векового дуба парка Альба — субботник">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAYS TO HELP -->
+<section class="section ways" id="ways">
+  <div class="section__inner">
+    <p class="section__eyebrow">
+      <span class="lang-content active" data-lang="ru">Как помочь</span>
+      <span class="lang-content" data-lang="be">Як дапамагчы</span>
+    </p>
+    <h2 class="section__title">
+      <span class="lang-content active" data-lang="ru">Каждый может сделать что-то</span>
+      <span class="lang-content" data-lang="be">Кожны можа зрабіць нешта</span>
+    </h2>
+    <p class="section__lead">
+      <span class="lang-content active" data-lang="ru">Не обязательно приезжать физически — рассказать об Альбе друзьям тоже очень важно.</span>
+      <span class="lang-content" data-lang="be">Не абавязкова прыязджаць фізічна — расказаць пра Альбу сябрам таксама вельмі важна.</span>
+    </p>
+    <div class="ways__grid">
+      <div class="way-card">
+        <div class="way-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="way-card__title">
+          <span class="lang-content active" data-lang="ru">Приехать на субботник</span>
+          <span class="lang-content" data-lang="be">Прыехаць на суботнік</span>
+        </div>
+        <p class="way-card__text">
+          <span class="lang-content active" data-lang="ru">Расчистка аллей, вырубка зарослей, уборка мусора. Несколько раз в год, все возрасты приветствуются. Инструменты есть — нужны только руки и желание.</span>
+          <span class="lang-content" data-lang="be">Расчыстка алей, высечка зараснікаў, уборка смецця. Некалькі разоў на год, любы ўзрост. Інструменты ёсць — патрэбны толькі рукі і жаданне.</span>
+        </p>
+        <span class="way-card__tag">
+          <span class="lang-content active" data-lang="ru">Самое ценное</span>
+          <span class="lang-content" data-lang="be">Самае каштоўнае</span>
+        </span>
+      </div>
+      <div class="way-card">
+        <div class="way-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="way-card__title">
+          <span class="lang-content active" data-lang="ru">Рассказать об Альбе</span>
+          <span class="lang-content" data-lang="be">Расказаць пра Альбу</span>
+        </div>
+        <p class="way-card__text">
+          <span class="lang-content active" data-lang="ru">Поделитесь этим сайтом в соцсетях, расскажите друзьям кто едет в Несвиж. Чем больше людей знают об Альбе — тем больше шансов на официальное восстановление.</span>
+          <span class="lang-content" data-lang="be">Падзяліцеся гэтым сайтам у сацсетках, раскажыце сябрам, якія едуць у Нясвіж. Чым больш людзей ведаюць пра Альбу — тым больш шансаў на афіцыйнае аднаўленне.</span>
+        </p>
+        <span class="way-card__tag">
+          <span class="lang-content active" data-lang="ru">Можно прямо сейчас</span>
+          <span class="lang-content" data-lang="be">Можна прама зараз</span>
+        </span>
+      </div>
+      <div class="way-card">
+        <div class="way-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+        <div class="way-card__title">
+          <span class="lang-content active" data-lang="ru">Фотографировать и публиковать</span>
+          <span class="lang-content" data-lang="be">Фатаграфаваць і публікаваць</span>
+        </div>
+        <p class="way-card__text">
+          <span class="lang-content active" data-lang="ru">Приедьте, сфотографируйте парк и опубликуйте с тегом <strong>#альбанесвиж</strong>. Красивые фото — лучший способ привлечь внимание к месту, которое этого заслуживает.</span>
+          <span class="lang-content" data-lang="be">Прыедзьце, сфатаграфуйце парк і апублікуйце з тэгам <strong>#альбанясвіж</strong>. Прыгожыя фота — лепшы спосаб прыцягнуць увагу да месца, якое гэтага заслугоўвае.</span>
+        </p>
+        <span class="way-card__tag">#альбанесвиж</span>
+      </div>
+      <div class="way-card">
+        <div class="way-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div class="way-card__title">
+          <span class="lang-content active" data-lang="ru">Помочь с документацией</span>
+          <span class="lang-content" data-lang="be">Дапамагчы з дакументацыяй</span>
+        </div>
+        <p class="way-card__text">
+          <span class="lang-content active" data-lang="ru">Нужна помощь с историческими исследованиями, переводами старых документов, поиском архивных материалов. Если у вас есть соответствующие навыки — напишите нам.</span>
+          <span class="lang-content" data-lang="be">Патрэбна дапамога з гістарычнымі даследаваннямі, перакладамі старых дакументаў, пошукам архіўных матэрыялаў.</span>
+        </p>
+        <span class="way-card__tag">
+          <span class="lang-content active" data-lang="ru">Для историков и архивистов</span>
+          <span class="lang-content" data-lang="be">Для гісторыкаў і архівістаў</span>
+        </span>
+      </div>
+      <div class="way-card">
+        <div class="way-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div class="way-card__title">
+          <span class="lang-content active" data-lang="ru">Написать о парке</span>
+          <span class="lang-content" data-lang="be">Напісаць пра парк</span>
+        </div>
+        <p class="way-card__text">
+          <span class="lang-content active" data-lang="ru">Блогеры, журналисты, путешественники — напишите об Альбе на своих платформах. Каждая публикация приближает парк к официальному признанию и реставрации.</span>
+          <span class="lang-content" data-lang="be">Блогеры, журналісты, падарожнікі — напішыце пра Альбу на сваіх платформах. Кожная публікацыя набліжае парк да афіцыйнага прызнання.</span>
+        </p>
+        <span class="way-card__tag">
+          <span class="lang-content active" data-lang="ru">Для блогеров и СМИ</span>
+          <span class="lang-content" data-lang="be">Для блогераў і СМІ</span>
+        </span>
+      </div>
+      <div class="way-card">
+        <div class="way-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="way-card__title">
+          <span class="lang-content active" data-lang="ru">Привести группу</span>
+          <span class="lang-content" data-lang="be">Прывесці групу</span>
+        </div>
+        <p class="way-card__text">
+          <span class="lang-content active" data-lang="ru">Школьный класс, коллеги, друзья — организуйте групповой субботник. Командная расчистка за несколько часов даёт результат, на который одному человеку нужны дни.</span>
+          <span class="lang-content" data-lang="be">Школьны клас, калегі, сябры — арганізуйце групавы суботнік. Каманднае расчышчэнне за некалькі гадзін дае выдатны вынік.</span>
+        </p>
+        <span class="way-card__tag">
+          <span class="lang-content active" data-lang="ru">Для групп и организаций</span>
+          <span class="lang-content" data-lang="be">Для груп і арганізацый</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUBBOTNIKS -->
+<section class="section subbotniks" id="subbotniks">
+  <div class="section__inner">
+    <p class="section__eyebrow">
+      <span class="lang-content active" data-lang="ru">Прошлые субботники</span>
+      <span class="lang-content" data-lang="be">Мінулыя суботнікі</span>
+    </p>
+    <h2 class="section__title">
+      <span class="lang-content active" data-lang="ru">Что уже сделано</span>
+      <span class="lang-content" data-lang="be">Што ўжо зроблена</span>
+    </h2>
+    <p class="section__lead">
+      <span class="lang-content active" data-lang="ru">С 2020 года волонтёры провели несколько субботников. Вот некоторые из них.</span>
+      <span class="lang-content" data-lang="be">З 2020 года валанцёры правялі некалькі суботнікаў. Вось некаторыя з іх.</span>
+    </p>
+    <div class="subbotniks__grid">
+      <div class="subbotnik-card">
+        <img class="subbotnik-card__img"
+          src="https://raw.githubusercontent.com/Stas0889/alba/main/img/clean-shore-project-01.webp"
+          alt="Субботник в Несвиже — уборка мусора у берега замкового пруда с видом на замок">
+        <div class="subbotnik-card__body">
+          <div class="subbotnik-card__date">
+            <span class="lang-content active" data-lang="ru">Весна 2020</span>
+            <span class="lang-content" data-lang="be">Вясна 2020</span>
+          </div>
+          <div class="subbotnik-card__title">
+            <span class="lang-content active" data-lang="ru">Первый субботник — чистый берег</span>
+            <span class="lang-content" data-lang="be">Першы суботнік — чысты бераг</span>
+          </div>
+          <p class="subbotnik-card__text">
+            <span class="lang-content active" data-lang="ru">Первая организованная акция по уборке берегов у замковых прудов и на территории Альбы. Показала масштаб проблемы и привлекла внимание местных жителей и СМИ.</span>
+            <span class="lang-content" data-lang="be">Першая арганізаваная акцыя па ўборцы берагоў у замкавых сажалак і на тэрыторыі Альбы. Паказала маштаб праблемы і прыцягнула ўвагу.</span>
+          </p>
+          <div class="subbotnik-card__result">
+            <span class="subbotnik-card__result-item">
+              <span class="lang-content active" data-lang="ru">Первый выход волонтёров</span>
+              <span class="lang-content" data-lang="be">Першы выхад валанцёраў</span>
+            </span>
+            <span class="subbotnik-card__result-item">
+              <span class="lang-content active" data-lang="ru">Репортаж на РТР-Беларусь</span>
+              <span class="lang-content" data-lang="be">Рэпартаж на РТР-Беларусь</span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="subbotnik-card">
+        <img class="subbotnik-card__img"
+          src="https://raw.githubusercontent.com/Stas0889/alba/main/img/anna-polyn-organizator.webp"
+          alt="Исследовательский субботник в Альбе — волонтёры изучают территорию парка">
+        <div class="subbotnik-card__body">
+          <div class="subbotnik-card__date">
+            <span class="lang-content active" data-lang="ru">18 апреля</span>
+            <span class="lang-content" data-lang="be">18 красавіка</span>
+          </div>
+          <div class="subbotnik-card__title">
+            <span class="lang-content active" data-lang="ru">Исследовательский субботник</span>
+            <span class="lang-content" data-lang="be">Даследчы суботнік</span>
+          </div>
+          <p class="subbotnik-card__text">
+            <span class="lang-content active" data-lang="ru">Волонтёры исследовали территорию парка, нанесли на карту сохранившиеся элементы: каналы, аллеи, фундаменты построек. Составили план первоочерёдных работ.</span>
+            <span class="lang-content" data-lang="be">Валанцёры даследавалі тэрыторыю парку, нанеслі на карту захаваныя элементы: каналы, алеі, падмуркі пабудоў. Склалі план першачарговых работ.</span>
+          </p>
+          <div class="subbotnik-card__result">
+            <span class="subbotnik-card__result-item">
+              <span class="lang-content active" data-lang="ru">Картирование территории</span>
+              <span class="lang-content" data-lang="be">Картаванне тэрыторыі</span>
+            </span>
+            <span class="subbotnik-card__result-item">
+              <span class="lang-content active" data-lang="ru">План восстановления</span>
+              <span class="lang-content" data-lang="be">План аднаўлення</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery strip -->
+    <div class="gallery-strip" style="margin-top:1.5rem;">
+      <div class="gallery-strip__item">
+        <img src="https://raw.githubusercontent.com/Stas0889/alba/main/img/nesvizh-trees-forest.webp" alt="Парк Альба — упавшее дерево, работа волонтёров">
+      </div>
+      <div class="gallery-strip__item">
+        <img src="https://raw.githubusercontent.com/Stas0889/alba/main/img/akba-.webp" alt="Волонтёр расчищает заросли в парке Альба">
+      </div>
+      <div class="gallery-strip__item">
+        <img src="https://raw.githubusercontent.com/Stas0889/alba/main/img/clean-shore-project-02.webp" alt="Мусор собранный на субботнике в Несвиже">
+      </div>
+      <div class="gallery-strip__item">
+        <img src="https://raw.githubusercontent.com/Stas0889/alba/main/img/group-of-volunteers.webp" alt="Волонтёры парка Альба — командное фото у дуба">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT EVENT -->
+<section class="next-event" id="next-event">
+  <div class="next-event__inner">
+    <div>
+      <p class="next-event__eyebrow">
+        <span class="lang-content active" data-lang="ru">Присоединяйтесь</span>
+        <span class="lang-content" data-lang="be">Далучайцеся</span>
+      </p>
+      <h2 class="next-event__title">
+        <span class="lang-content active" data-lang="ru">Следите за ближайшими субботниками</span>
+        <span class="lang-content" data-lang="be">Сачыце за бліжэйшымі суботнікамі</span>
+      </h2>
+      <p class="next-event__text">
+        <span class="lang-content active" data-lang="ru">Анонсы субботников публикуются в Instagram и VK. Подпишитесь чтобы не пропустить — мероприятия проводятся несколько раз в год, обычно весной и осенью.</span>
+        <span class="lang-content" data-lang="be">Анонсы суботнікаў публікуюцца ў Instagram і VK. Падпішыцеся каб не прапусціць — мерапрыемствы праводзяцца некалькі разоў на год, звычайна вясной і восенню.</span>
+      </p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="https://www.instagram.com/alba_neswizh" target="_blank" class="btn btn--light">Instagram @alba_neswizh</a>
+        <a href="https://vk.com/savealba" target="_blank" class="btn" style="background:transparent;color:#F5F2EB;border:1px solid rgba(245,242,235,0.35);">VK savealba</a>
+      </div>
+    </div>
+    <div class="next-event__details">
+      <div class="next-event__detail">
+        <div class="next-event__detail-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <div>
+          <div class="next-event__detail-label">
+            <span class="lang-content active" data-lang="ru">Когда</span>
+            <span class="lang-content" data-lang="be">Калі</span>
+          </div>
+          <div class="next-event__detail-val">
+            <span class="lang-content active" data-lang="ru">Весна и осень, следите в соцсетях</span>
+            <span class="lang-content" data-lang="be">Вясна і восень, сачыце ў сацсетках</span>
+          </div>
+        </div>
+      </div>
+      <div class="next-event__detail">
+        <div class="next-event__detail-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        </div>
+        <div>
+          <div class="next-event__detail-label">
+            <span class="lang-content active" data-lang="ru">Место</span>
+            <span class="lang-content" data-lang="be">Месца</span>
+          </div>
+          <div class="next-event__detail-val">
+            <span class="lang-content active" data-lang="ru">Парк Альба, Несвиж (53.202766, 26.642774)</span>
+            <span class="lang-content" data-lang="be">Парк Альба, Нясвіж (53.202766, 26.642774)</span>
+          </div>
+        </div>
+      </div>
+      <div class="next-event__detail">
+        <div class="next-event__detail-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div>
+          <div class="next-event__detail-label">
+            <span class="lang-content active" data-lang="ru">Кому</span>
+            <span class="lang-content" data-lang="be">Каму</span>
+          </div>
+          <div class="next-event__detail-val">
+            <span class="lang-content active" data-lang="ru">Все возрасты, без опыта</span>
+            <span class="lang-content" data-lang="be">Любы ўзрост, без досведу</span>
+          </div>
+        </div>
+      </div>
+      <div class="next-event__detail">
+        <div class="next-event__detail-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>
+        </div>
+        <div>
+          <div class="next-event__detail-label">
+            <span class="lang-content active" data-lang="ru">Что взять</span>
+            <span class="lang-content" data-lang="be">Што ўзяць</span>
+          </div>
+          <div class="next-event__detail-val">
+            <span class="lang-content active" data-lang="ru">Удобную одежду, перчатки, воду</span>
+            <span class="lang-content" data-lang="be">Зручны адзенне, пальчаткі, ваду</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT PERSON -->
+<section class="section about-person" id="about">
+  <div class="section__inner">
+    <div class="about-person__grid">
+      <div class="about-person__img-wrap">
+        <img class="about-person__img"
+          src="https://raw.githubusercontent.com/Stas0889/alba/main/img/akba-.webp"
+          alt="Анна Полын — инициатор волонтёрского проекта по восстановлению парка Альба">
+      </div>
+      <div>
+        <p class="section__eyebrow">
+          <span class="lang-content active" data-lang="ru">Инициатор проекта</span>
+          <span class="lang-content" data-lang="be">Ініцыятар праекта</span>
+        </p>
+        <div class="about-person__name">
+          <span class="lang-content active" data-lang="ru">Анна Полын</span>
+          <span class="lang-content" data-lang="be">Ганна Полын</span>
+        </div>
+        <div class="about-person__role">
+          <span class="lang-content active" data-lang="ru">Психолог · Несвиж · Основатель savealba</span>
+          <span class="lang-content" data-lang="be">Псіхолаг · Нясвіж · Заснавальнік savealba</span>
+        </div>
+        <div class="divider"></div>
+        <div class="about-person__text">
+          <p>
+            <span class="lang-content active" data-lang="ru">Анна — психолог из Несвижа, которая однажды обнаружила Альбу во время прогулки и была потрясена тем, что такое место находится в полном запустении. Так начался волонтёрский проект, который с 2020 года собирает людей на субботники.</span>
+            <span class="lang-content" data-lang="be">Ганна — псіхолаг з Нясвіжа, якая аднойчы выявіла Альбу падчас прагулкі і была ўражана тым, што такое месца знаходзіцца ў поўным запусценні. Так пачаўся валанцёрскі праект.</span>
+          </p>
+          <p>
+            <span class="lang-content active" data-lang="ru">«Альба в переводе с итальянского означает "Рассвет", — говорит Анна. — И мы верим, что у этого места будет свой рассвет. Главное — чтобы люди узнали о нём и полюбили его так же, как мы.»</span>
+            <span class="lang-content" data-lang="be">«Альба ў перакладзе з італьянскай азначае "Досвітак", — кажа Ганна. — І мы верым, што ў гэтага месца будзе свой досвітак. Галоўнае — каб людзі даведаліся пра яго.»</span>
+          </p>
+        </div>
+        <div class="about-person__socials">
+          <a href="https://www.instagram.com/alba_neswizh" target="_blank" class="btn btn--outline">Instagram @alba_neswizh</a>
+          <a href="https://vk.com/savealba" target="_blank" class="btn btn--outline">VK savealba</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="section contacts" id="contacts">
+  <div class="section__inner">
+    <p class="section__eyebrow">
+      <span class="lang-content active" data-lang="ru">Контакты</span>
+      <span class="lang-content" data-lang="be">Кантакты</span>
+    </p>
+    <h2 class="section__title">
+      <span class="lang-content active" data-lang="ru">Следите и пишите нам</span>
+      <span class="lang-content" data-lang="be">Сачыце і пішыце нам</span>
+    </h2>
+    <p class="section__lead">
+      <span class="lang-content active" data-lang="ru">Все анонсы субботников и новости парка публикуются в соцсетях. Вопросы и предложения — тоже туда.</span>
+      <span class="lang-content" data-lang="be">Усе анонсы суботнікаў і навіны парку публікуюцца ў сацсетках.</span>
+    </p>
+    <div class="contacts__grid">
+      <a href="https://www.instagram.com/alba_neswizh" target="_blank" class="contact-card">
+        <div class="contact-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </div>
+        <div class="contact-card__platform">Instagram</div>
+        <div class="contact-card__handle">@alba_neswizh</div>
+        <p class="contact-card__desc">
+          <span class="lang-content active" data-lang="ru">Фото парка в разные сезоны, анонсы субботников, истории о деревьях и каналах</span>
+          <span class="lang-content" data-lang="be">Фота парку ў розныя сезоны, анонсы суботнікаў, гісторыі пра дрэвы і каналы</span>
+        </p>
+      </a>
+      <a href="https://vk.com/savealba" target="_blank" class="contact-card">
+        <div class="contact-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z" rx="2"/><path d="M8 11.5c0 2.485 1.567 4.5 4.5 4.5H14v-2h-1.5C10.567 14 9.5 12.985 9.5 11.5S10.567 9 12.5 9H14V7h-1.5C9.567 7 8 8.015 8 11.5z"/><path d="M14 11h4M16 9v4"/></svg>
+        </div>
+        <div class="contact-card__platform">VKontakte</div>
+        <div class="contact-card__handle">vk.com/savealba</div>
+        <p class="contact-card__desc">
+          <span class="lang-content active" data-lang="ru">Подробные отчёты о субботниках, план возрождения парка, обсуждения и история</span>
+          <span class="lang-content" data-lang="be">Падрабязныя справаздачы пра суботнікі, план адраджэння парку, абмеркаванні і гісторыя</span>
+        </p>
+      </a>
+      <div class="contact-card" style="cursor:default;">
+        <div class="contact-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        </div>
+        <div class="contact-card__platform">
+          <span class="lang-content active" data-lang="ru">Координаты парка</span>
+          <span class="lang-content" data-lang="be">Каардынаты парку</span>
+        </div>
+        <div class="contact-card__handle">53.202766, 26.642774</div>
+        <p class="contact-card__desc">
+          <span class="lang-content active" data-lang="ru">Несвиж, посёлок Альба. 3,9 км от замка по ул. Дзержинского</span>
+          <span class="lang-content" data-lang="be">Нясвіж, пасёлак Альба. 3,9 км ад замка па вул. Дзяржынскага</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+function setLang(lang){document.querySelectorAll('.lang-content').forEach(el=>el.classList.toggle('active',el.dataset.lang===lang));document.querySelectorAll('.nav__lang button,.mob-menu__lang button').forEach(b=>b.classList.toggle('active',b.textContent.trim()===lang.toUpperCase()||(lang==='ru'&&b.textContent.includes('Русский'))||(lang==='be'&&b.textContent.includes('Беларускі'))));localStorage.setItem('alba-lang',lang);}
+function toggleMob(){var m=document.getElementById('mob-menu');var b=document.querySelector('.nav__burger');if(!m||!b)return;var o=m.classList.toggle('open');b.classList.toggle('open',o);document.body.style.overflow=o?'hidden':'';}
+document.addEventListener('click',function(e){var m=document.getElementById('mob-menu');var b=document.querySelector('.nav__burger');if(m&&m.classList.contains('open')&&!m.contains(e.target)&&b&&!b.contains(e.target)){m.classList.remove('open');b.classList.remove('open');document.body.style.overflow='';}});
+function openShare(){const url=window.location.href,title='Парк Альба — забытый Версаль Беларуси',text='Парк Альба в Несвиже — первый зоопарк Беларуси, старейшая аллея страны и система каналов XVI века. Его восстанавливают волонтёры!';if(navigator.share){navigator.share({title,text,url}).catch(()=>{});return;}const p=document.getElementById('share-popup');if(p){document.getElementById('share-url').value=url;p.classList.add('open');}}
+function closeShare(){const p=document.getElementById('share-popup');if(p)p.classList.remove('open');}
+function copyShareUrl(){const i=document.getElementById('share-url');i.select();document.execCommand('copy');document.querySelectorAll('.shr-copy-btn,.shr-cp').forEach(b=>{const t=b.innerHTML;b.innerHTML='✓';setTimeout(()=>b.innerHTML=t,2000);});}
+function shareVk(){const u=encodeURIComponent(window.location.href);window.open('https://vk.com/share.php?url='+u,'_blank');}
+function shareTg(){const u=encodeURIComponent(window.location.href),t=encodeURIComponent('Парк Альба — забытый Версаль Беларуси');window.open('https://t.me/share/url?url='+u+'&text='+t,'_blank');}
+function shareWa(){const u=encodeURIComponent(window.location.href),t=encodeURIComponent('Парк Альба в Несвиже — первый зоопарк Беларуси и старейшая аллея страны: ');window.open('https://wa.me/?text='+t+u,'_blank');}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeShare();});
+window.addEventListener('scroll',()=>{const n=document.querySelector('.nav');if(n)n.style.boxShadow=window.scrollY>20?'0 2px 20px rgba(46,64,42,0.1)':'none';});
+const _obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}},{threshold:0.08}));
+document.querySelectorAll('.facts__card,.history__item,.volunteer__way,.stats__item,.place-card,.plan__step,.practical__card,.cta__link,.cta__card,.event,.fact-pill,.today__card,.way-card,.subbotnik-card,.contact-card,.next-event__detail,.poi,.route__step').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity .5s ease,transform .5s ease';_obs.observe(el);});
+const _sl=localStorage.getItem('alba-lang');if(_sl&&_sl!=='ru')setLang(_sl);
+
+</script>
+<script src="footer.js"></script>
+</body>
+</html>
