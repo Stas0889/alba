@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Галерея парка Альба Несвиж | Фото парка, каналов и дубов</title>
+<meta name="description" content="Фотогалерея парка Альба в Несвиже — каналы, вековые дубы, аллеи, волонтёрские субботники. Парк Радзивиллов XVI века.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="Webclip.png">
+<link rel="canonical" href="https://stas0889.github.io/alba/gallery.html">
+<meta property="og:title" content="Галерея парка Альба Несвиж">
+<meta property="og:description" content="Фотогалерея парка Альба — каналы, вековые дубы, аллеи XVI века.">
+<meta property="og:image" content="https://raw.githubusercontent.com/Stas0889/alba/main/img/canal-swans.webp">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+@font-face {
+  font-family: 'Arkhip';
+  src: url('Arkhip-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green: #2E402A; --green-btn: #2D4126; --green-hover: #3D5635;
+  --bg: #EEEADF; --card-bg: #F5F2EB; --text: #232323;
+  --muted: #495547; --accent: #C4A35A; --border: #D4CFC4;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; overflow-x: hidden; padding-top: 60px; }
+
+.page-hero { padding: 4rem 2.5rem 3rem; max-width: 1100px; margin: 0 auto; }
+.page-hero__eyebrow { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; font-weight: 500; }
+.page-hero__title { font-family: 'Arkhip', sans-serif; font-size: clamp(2rem, 4vw, 3rem); color: var(--green); line-height: 1.1; margin-bottom: 1rem; }
+.page-hero__sub { font-size: 1rem; color: var(--muted); max-width: 520px; line-height: 1.7; }
+
+/* FILTERS */
+.filters { padding: 0 2.5rem 2rem; max-width: 1100px; margin: 0 auto; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.filter-btn { padding: 0.5rem 1.25rem; border-radius: 20px; border: 1px solid var(--border); background: none; font-family: 'Inter', sans-serif; font-size: 0.8rem; color: var(--muted); cursor: pointer; transition: all 0.2s; }
+.filter-btn:hover { border-color: var(--green); color: var(--green); }
+.filter-btn.active { background: var(--green); color: #fff; border-color: var(--green); }
+
+/* GRID */
+.gallery-grid { columns: 3; gap: 0.75rem; padding: 0 2.5rem 5rem; max-width: 1440px; margin: 0 auto; }
+.gallery-grid__item { break-inside: avoid; margin-bottom: 0.75rem; overflow: hidden; border-radius: 6px; cursor: pointer; position: relative; }
+.gallery-grid__item img { width: 100%; display: block; transition: transform 0.5s ease; }
+.gallery-grid__item:hover img { transform: scale(1.03); }
+.gallery-grid__item .overlay { position: absolute; inset: 0; background: rgba(46,64,42,0); transition: background 0.3s; display: flex; align-items: flex-end; padding: 1rem; }
+.gallery-grid__item:hover .overlay { background: rgba(46,64,42,0.35); }
+.gallery-grid__item .overlay__caption { font-size: 0.78rem; color: #fff; opacity: 0; transition: opacity 0.3s; line-height: 1.4; }
+.gallery-grid__item:hover .overlay__caption { opacity: 1; }
+
+/* LIGHTBOX */
+.lightbox { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,0.92); align-items: center; justify-content: center; padding: 1.5rem; }
+.lightbox.open { display: flex; }
+.lightbox__img-wrap { position: relative; max-width: 90vw; max-height: 90vh; }
+.lightbox__img { max-width: 90vw; max-height: 85vh; object-fit: contain; border-radius: 6px; display: block; }
+.lightbox__caption { margin-top: 0.75rem; text-align: center; font-size: 0.8rem; color: rgba(255,255,255,0.6); }
+.lightbox__close { position: fixed; top: 1.5rem; right: 1.5rem; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; opacity: 0.7; transition: opacity 0.2s; }
+.lightbox__close:hover { opacity: 1; }
+.lightbox__prev, .lightbox__next { position: fixed; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.1); border: none; color: #fff; width: 48px; height: 48px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+.lightbox__prev:hover, .lightbox__next:hover { background: rgba(255,255,255,0.2); }
+.lightbox__prev { left: 1.5rem; }
+.lightbox__next { right: 1.5rem; }
+
+/* LANG */
+.lang-content { display: none; }
+.lang-content.active { display: block; }
+span.lang-content { display: none; }
+span.lang-content.active { display: inline; }
+
+@media (max-width: 1024px) { .gallery-grid { columns: 2; } }
+@media (max-width: 768px) {
+  .gallery-grid { columns: 2; padding: 0 1.25rem 4rem; gap: 0.5rem; }
+  .gallery-grid__item { margin-bottom: 0.5rem; }
+  .page-hero, .filters { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .lightbox__prev { left: 0.5rem; }
+  .lightbox__next { right: 0.5rem; }
+}
+@media (max-width: 480px) { .gallery-grid { columns: 1; } }
+html, body { max-width: 100vw; overflow-x: hidden; }
+</style>
+</head>
+<body>
+<script src="navbar.js"></script>
+
+<div class="page-hero">
+  <p class="page-hero__eyebrow">
+    <span class="lang-content active" data-lang="ru">Парк Альба</span>
+    <span class="lang-content" data-lang="be">Парк Альба</span>
+  </p>
+  <h1 class="page-hero__title">
+    <span class="lang-content active" data-lang="ru">Галерея</span>
+    <span class="lang-content" data-lang="be">Галерэя</span>
+  </h1>
+  <p class="page-hero__sub">
+    <span class="lang-content active" data-lang="ru">Каналы, вековые дубы, аллеи и волонтёрские субботники — парк Альба в фотографиях.</span>
+    <span class="lang-content" data-lang="be">Каналы, вякавыя дубы, алеі і суботнікі — парк Альба ў фатаграфіях.</span>
+  </p>
+</div>
+
+<div class="filters">
+  <button class="filter-btn active" data-filter="all" onclick="filterGallery('all', this)">
+    <span class="lang-content active" data-lang="ru">Все</span>
+    <span class="lang-content" data-lang="be">Усе</span>
+  </button>
+  <button class="filter-btn" data-filter="nature" onclick="filterGallery('nature', this)">
+    <span class="lang-content active" data-lang="ru">Природа</span>
+    <span class="lang-content" data-lang="be">Прырода</span>
+  </button>
+  <button class="filter-btn" data-filter="canal" onclick="filterGallery('canal', this)">
+    <span class="lang-content active" data-lang="ru">Каналы</span>
+    <span class="lang-content" data-lang="be">Каналы</span>
+  </button>
+  <button class="filter-btn" data-filter="history" onclick="filterGallery('history', this)">
+    <span class="lang-content active" data-lang="ru">История</span>
+    <span class="lang-content" data-lang="be">Гісторыя</span>
+  </button>
+  <button class="filter-btn" data-filter="volunteer" onclick="filterGallery('volunteer', this)">
+    <span class="lang-content active" data-lang="ru">Волонтёры</span>
+    <span class="lang-content" data-lang="be">Валанцёры</span>
+  </button>
+</div>
+
+<div class="gallery-grid" id="gallery">
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightboxOutside(event)">
+  <button class="lightbox__close" onclick="closeLightbox()">✕</button>
+  <button class="lightbox__prev" onclick="changeLightbox(-1)">&#8592;</button>
+  <div class="lightbox__img-wrap">
+    <img class="lightbox__img" id="lightbox-img" src="" alt="">
+    <p class="lightbox__caption" id="lightbox-caption"></p>
+  </div>
+  <button class="lightbox__next" onclick="changeLightbox(1)">&#8594;</button>
+</div>
+
+<script src="footer.js"></script>
+<script>
+const BASE = 'https://raw.githubusercontent.com/Stas0889/alba/main/img/';
+
+const photos = [
+  { src: 'canal-swans.webp', cat: 'canal', ru: 'Лебеди на канале парка Альба', be: 'Лебедзі на канале парку Альба' },
+  { src: 'canal-swans-summer.webp', cat: 'canal', ru: 'Канал летом', be: 'Канал летам' },
+  { src: 'canal-alba-autumn.webp', cat: 'canal', ru: 'Канал осенью', be: 'Канал восенню' },
+  { src: 'canal-summer.jpg', cat: 'canal', ru: 'Канал в летний день', be: 'Канал у летні дзень' },
+  { src: 'canal.jpg', cat: 'canal', ru: 'Канал парка Альба', be: 'Канал парку Альба' },
+  { src: 'hero-canal.jpg', cat: 'canal', ru: 'Канал весной', be: 'Канал вясной' },
+  { src: '500-year-old-oak-tree-with-a-child.webp', cat: 'nature', ru: '500-летний дуб', be: '500-гадовы дуб' },
+  { src: '500-year-old-oak-tree.webp', cat: 'nature', ru: 'Старейший дуб парка', be: 'Найстарэйшы дуб парку' },
+  { src: 'oak-child.webp', cat: 'nature', ru: 'Дуб и ребёнок', be: 'Дуб і дзіця' },
+  { src: 'oak-frost.webp', cat: 'nature', ru: 'Дуб в инее зимой', be: 'Дуб у інеі зімой' },
+  { src: 'alley-summer.webp', cat: 'nature', ru: 'Аллея парка летом', be: 'Алея парку летам' },
+  { src: 'nesvizh-trees-forest.webp', cat: 'nature', ru: 'Лес парка Альба', be: 'Лес парку Альба' },
+  { src: 'nesvezhsky-pond.webp', cat: 'nature', ru: 'Пруд в Несвиже', be: 'Сажалка ў Нясвіжы' },
+  { src: 'road-to-alba.webp', cat: 'nature', ru: 'Дорога к Альбе', be: 'Дарога да Альбы' },
+  { src: 'road-to-alba-02.webp', cat: 'nature', ru: 'Путь в парк', be: 'Шлях у парк' },
+  { src: 'engraving-vid.webp', cat: 'history', ru: 'Гравюра — план парка Альба', be: 'Гравюра — план парку Альба' },
+  { src: 'engraving-by-makovsky.jpg', cat: 'history', ru: 'Гравюра Маковского, 1604', be: 'Гравюра Макоўскага, 1604' },
+  { src: 'cossack-alba.jpg', cat: 'history', ru: 'Историческое фото Альбы', be: 'Гістарычнае фота Альбы' },
+  { src: 'menjnjas-01.jpg', cat: 'history', ru: 'Макет дворца Альба', be: 'Макет палаца Альба' },
+  { src: 'menjnjas-02.png', cat: 'history', ru: 'Реконструкция дворца', be: 'Рэканструкцыя палаца' },
+  { src: 'alba-Island-with quadracoprera.jpg', cat: 'history', ru: 'Аэрофото — система каналов', be: 'Аэрафота — сістэма каналаў' },
+  { src: 'distillery-building-in-alba.webp', cat: 'history', ru: 'Здание винокурни Альбы', be: 'Будынак вінакурні Альбы' },
+  { src: 'distillery-building-in-alba-02.webp', cat: 'history', ru: 'Винокурня, деталь', be: 'Вінакурня, дэталь' },
+  { src: 'alba-distillery-building-01.webp', cat: 'history', ru: 'Исторические постройки', be: 'Гістарычныя пабудовы' },
+  { src: 'alba-distillery-building-02.webp', cat: 'history', ru: 'Фольварк Альба', be: 'Фальварак Альба' },
+  { src: 'alba-distillery-creatives-corps.jpg', cat: 'history', ru: 'Творческий корпус Альбы', be: 'Творчы корпус Альбы' },
+  { src: 'akba-.webp', cat: 'history', ru: 'Парк Альба', be: 'Парк Альба' },
+  { src: 'volonery.webp', cat: 'volunteer', ru: 'Волонтёры в парке', be: 'Валанцёры ў парку' },
+  { src: 'volontery-2.webp', cat: 'volunteer', ru: 'Команда волонтёров', be: 'Каманда валанцёраў' },
+  { src: 'group-of-volunteers.webp', cat: 'volunteer', ru: 'Группа волонтёров', be: 'Група валанцёраў' },
+  { src: 'saturday-trash.webp', cat: 'volunteer', ru: 'Субботник — расчистка', be: 'Суботнік — расчыстка' },
+  { src: 'volunteer subbotnik.webp', cat: 'volunteer', ru: 'Волонтёрский субботник', be: 'Валанцёрскі суботнік' },
+  { src: 'clean-shore-project-01.webp', cat: 'volunteer', ru: 'Проект Чистый берег', be: 'Праект Чысты бераг' },
+  { src: 'clean-shore-project-02.webp', cat: 'volunteer', ru: 'Расчистка берегов каналов', be: 'Расчыстка берагоў каналаў' },
+  { src: 'anna-polyn-organizator.webp', cat: 'volunteer', ru: 'Организатор проекта', be: 'Арганізатар праекту' },
+];
+
+let currentFilter = 'all';
+let currentIndex = 0;
+let visiblePhotos = [];
+const lang = () => localStorage.getItem('alba-lang') || 'ru';
+
+function renderGallery(filter) {
+  currentFilter = filter;
+  visiblePhotos = filter === 'all' ? photos : photos.filter(p => p.cat === filter);
+  const grid = document.getElementById('gallery');
+  grid.innerHTML = visiblePhotos.map((p, i) => `
+    <div class="gallery-grid__item" data-cat="${p.cat}" onclick="openLightbox(${i})">
+      <img src="${BASE}${p.src}" alt="${p.ru}" loading="lazy">
+      <div class="overlay">
+        <span class="overlay__caption">${lang() === 'be' ? p.be : p.ru}</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterGallery(filter, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderGallery(filter);
+}
+
+function openLightbox(index) {
+  currentIndex = index;
+  const p = visiblePhotos[index];
+  document.getElementById('lightbox-img').src = BASE + p.src;
+  document.getElementById('lightbox-img').alt = p.ru;
+  document.getElementById('lightbox-caption').textContent = lang() === 'be' ? p.be : p.ru;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeLightboxOutside(e) {
+  if (e.target === document.getElementById('lightbox')) closeLightbox();
+}
+
+function changeLightbox(dir) {
+  currentIndex = (currentIndex + dir + visiblePhotos.length) % visiblePhotos.length;
+  openLightbox(currentIndex);
+}
+
+document.addEventListener('keydown', function(e) {
+  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  if (e.key === 'ArrowRight') changeLightbox(1);
+  if (e.key === 'ArrowLeft') changeLightbox(-1);
+  if (e.key === 'Escape') closeLightbox();
+});
+
+function setLang(l) {
+  document.querySelectorAll('.lang-content').forEach(el => el.classList.toggle('active', el.dataset.lang === l));
+  document.querySelectorAll('.nav__lang button, .mob-menu__lang button').forEach(b => {
+    b.classList.toggle('active', b.textContent.trim() === l.toUpperCase() || (l==='ru' && b.textContent.includes('Русский')) || (l==='be' && b.textContent.includes('Беларускі')));
+  });
+  localStorage.setItem('alba-lang', l);
+  renderGallery(currentFilter);
+}
+
+renderGallery('all');
+const savedLang = localStorage.getItem('alba-lang');
+if (savedLang && savedLang !== 'ru') setLang(savedLang);
+</script>
+</body>
+</html>
