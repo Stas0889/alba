@@ -1,5 +1,5 @@
 (function () {
-  var YANDEX_METRIKA_ID = "";
+  var YANDEX_METRIKA_ID = "108811891";
   var GOOGLE_ANALYTICS_ID = "";
 
   if (YANDEX_METRIKA_ID) {
@@ -15,8 +15,12 @@
       a.parentNode.insertBefore(k, a);
     })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-    window.ym(YANDEX_METRIKA_ID, "init", {
+    window.ym(Number(YANDEX_METRIKA_ID), "init", {
+      ssr: true,
       clickmap: true,
+      ecommerce: "dataLayer",
+      referrer: document.referrer,
+      url: location.href,
       trackLinks: true,
       accurateTrackBounce: true,
       webvisor: true
