@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>События и субботники — парк Альба Несвиж</title>
+<meta name="description" content="Волонтёрские субботники и события в парке Альба, Несвиж. Расписание, архив мероприятий, как присоединиться.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="Webclip.png">
+<link rel="canonical" href="https://stas0889.github.io/alba/events.html">
+<meta property="og:title" content="События и субботники — парк Альба Несвиж">
+<meta property="og:description" content="Волонтёрские субботники в парке Альба. Присоединяйтесь!">
+<meta property="og:image" content="https://raw.githubusercontent.com/Stas0889/alba/main/img/group-of-volunteers.webp">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+@font-face {
+  font-family: 'Arkhip';
+  src: url('Arkhip-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green: #2E402A; --green-btn: #2D4126; --green-hover: #3D5635;
+  --bg: #EEEADF; --card-bg: #F5F2EB; --text: #232323;
+  --muted: #495547; --accent: #C4A35A; --border: #D4CFC4;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; overflow-x: hidden; padding-top: 60px; }
+html, body { max-width: 100vw; overflow-x: hidden; }
+
+/* PAGE HERO */
+.page-hero { padding: 4rem 2.5rem 3rem; max-width: 1100px; margin: 0 auto; }
+.page-hero__eyebrow { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; font-weight: 500; }
+.page-hero__title { font-family: 'Arkhip', sans-serif; font-size: clamp(2rem, 4vw, 3rem); color: var(--green); line-height: 1.1; margin-bottom: 1rem; }
+.page-hero__sub { font-size: 1rem; color: var(--muted); max-width: 560px; line-height: 1.75; }
+
+/* UPCOMING */
+.upcoming { background: var(--green); padding: 5rem 2.5rem; position: relative; overflow: hidden; }
+.upcoming::before { content: 'МАЙ'; position: absolute; right: -1rem; top: 50%; transform: translateY(-50%); font-family: 'Arkhip', sans-serif; font-size: 14rem; color: rgba(255,255,255,0.04); pointer-events: none; line-height: 1; }
+.upcoming__inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.upcoming__eyebrow { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; font-weight: 500; }
+.upcoming__title { font-family: 'Arkhip', sans-serif; font-size: clamp(1.75rem, 3vw, 2.5rem); color: #F5F2EB; line-height: 1.2; margin-bottom: 1.25rem; }
+.upcoming__text { font-size: 0.95rem; color: rgba(245,242,235,0.7); line-height: 1.75; margin-bottom: 2rem; }
+.upcoming__date-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(196,163,90,0.15); border: 1px solid rgba(196,163,90,0.4); border-radius: 6px; padding: 0.6rem 1rem; font-size: 0.85rem; color: var(--accent); margin-bottom: 1.5rem; }
+.upcoming__actions { display: flex; flex-direction: column; gap: 0.75rem; }
+.btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 5px; font-family: 'Inter', sans-serif; font-size: 0.875rem; font-weight: 500; text-decoration: none; letter-spacing: 0.02em; cursor: pointer; transition: all 0.25s; border: none; white-space: nowrap; }
+.btn--light { background: #F5F2EB; color: var(--green); }
+.btn--light:hover { background: #fff; transform: translateY(-1px); }
+.btn--outline-light { background: transparent; color: #F5F2EB; border: 1px solid rgba(245,242,235,0.35); }
+.btn--outline-light:hover { border-color: rgba(245,242,235,0.7); background: rgba(245,242,235,0.08); }
+.upcoming__img-wrap { position: relative; }
+.upcoming__img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px; display: block; }
+.upcoming__img-note { margin-top: 0.75rem; font-size: 0.75rem; color: rgba(245,242,235,0.4); font-style: italic; }
+
+/* WHAT TO EXPECT */
+.expect { background: var(--card-bg); border-top: 1px solid var(--border); padding: 5rem 2.5rem; }
+.expect__inner { max-width: 1100px; margin: 0 auto; }
+.expect__eyebrow { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; font-weight: 500; }
+.expect__title { font-family: 'Arkhip', sans-serif; font-size: clamp(1.5rem, 2.5vw, 2rem); color: var(--green); line-height: 1.2; margin-bottom: 3rem; }
+.expect__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.expect__item { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.75rem; }
+.expect__num { font-family: 'Arkhip', sans-serif; font-size: 1.5rem; color: var(--accent); margin-bottom: 0.75rem; }
+.expect__heading { font-size: 0.9rem; font-weight: 500; color: var(--green); margin-bottom: 0.5rem; }
+.expect__text { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+
+/* ARCHIVE */
+.archive { padding: 5rem 2.5rem; background: var(--bg); }
+.archive__inner { max-width: 1100px; margin: 0 auto; }
+.archive__eyebrow { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; font-weight: 500; }
+.archive__title { font-family: 'Arkhip', sans-serif; font-size: clamp(1.5rem, 2.5vw, 2rem); color: var(--green); line-height: 1.2; margin-bottom: 3rem; }
+.event-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 2rem; }
+.event-card__grid { display: grid; grid-template-columns: 380px 1fr; }
+.event-card__img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 280px; }
+.event-card__body { padding: 2.5rem; }
+.event-card__meta { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
+.event-card__tag { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.72rem; letter-spacing: 0.04em; font-weight: 500; }
+.event-card__tag--past { background: var(--bg); border: 1px solid var(--border); color: var(--muted); }
+.event-card__tag--type { background: rgba(196,163,90,0.1); border: 1px solid rgba(196,163,90,0.3); color: var(--accent); }
+.event-card__date { font-family: 'Arkhip', sans-serif; font-size: 0.85rem; color: var(--muted); }
+.event-card__title { font-family: 'Arkhip', sans-serif; font-size: 1.3rem; color: var(--green); line-height: 1.25; margin-bottom: 1rem; }
+.event-card__text { font-size: 0.9rem; color: var(--muted); line-height: 1.75; margin-bottom: 1.5rem; }
+.event-card__stats { display: flex; gap: 2rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+.event-card__stat-num { font-family: 'Arkhip', sans-serif; font-size: 1.4rem; color: var(--green); line-height: 1; }
+.event-card__stat-label { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 0.2rem; }
+
+/* PHOTO STRIP */
+.event-card__photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-top: 1.5rem; }
+.event-card__photo { aspect-ratio: 4/3; overflow: hidden; border-radius: 5px; }
+.event-card__photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+.event-card__photo:hover img { transform: scale(1.05); }
+
+/* LANG */
+.lang-content { display: none; }
+.lang-content.active { display: block; }
+span.lang-content { display: none; }
+span.lang-content.active { display: inline; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .upcoming__inner { grid-template-columns: 1fr; gap: 3rem; }
+  .event-card__grid { grid-template-columns: 1fr; }
+  .event-card__img { min-height: 240px; aspect-ratio: 16/9; }
+  .expect__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .page-hero, .expect, .archive, .upcoming { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .expect__grid { grid-template-columns: 1fr; }
+  .event-card__body { padding: 1.5rem; }
+  .event-card__stats { gap: 1.25rem; }
+  .event-card__photos { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+<script src="navbar.js"></script>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <p class="page-hero__eyebrow">
+    <span class="lang-content active" data-lang="ru">Парк Альба</span>
+    <span class="lang-content" data-lang="be">Парк Альба</span>
+  </p>
+  <h1 class="page-hero__title">
+    <span class="lang-content active" data-lang="ru">События и субботники</span>
+    <span class="lang-content" data-lang="be">Падзеі і суботнікі</span>
+  </h1>
+  <p class="page-hero__sub">
+    <span class="lang-content active" data-lang="ru">С 2020 года волонтёры регулярно собираются в Альбе, чтобы расчищать аллеи, каналы и сохранять парк. Присоединяйтесь!</span>
+    <span class="lang-content" data-lang="be">З 2020 года валанцёры рэгулярна збіраюцца ў Альбе, каб расчышчаць алеі, каналы і захоўваць парк. Далучайцеся!</span>
+  </p>
+</div>
+
+<!-- UPCOMING EVENT -->
+<section class="upcoming">
+  <div class="upcoming__inner">
+    <div>
+      <p class="upcoming__eyebrow">
+        <span class="lang-content active" data-lang="ru">Ближайшее событие</span>
+        <span class="lang-content" data-lang="be">Бліжэйшая падзея</span>
+      </p>
+      <div class="upcoming__date-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <span class="lang-content active" data-lang="ru">Май 2026 — дата уточняется</span>
+        <span class="lang-content" data-lang="be">Май 2026 — дата ўдакладняецца</span>
+      </div>
+      <h2 class="upcoming__title">
+        <span class="lang-content active" data-lang="ru">Весенний субботник в Альбе</span>
+        <span class="lang-content" data-lang="be">Веснавы суботнік у Альбе</span>
+      </h2>
+      <p class="upcoming__text">
+        <span class="lang-content active" data-lang="ru">Приглашаем всех желающих на весенний субботник в парке Альба. Будем расчищать аллеи и каналы, знакомиться с историей парка. Точная дата и детали появятся в наших соцсетях — следите за анонсами в Telegram и Instagram.</span>
+        <span class="lang-content" data-lang="be">Запрашаем усіх ахвотных на веснавы суботнік у парку Альба. Будзем расчышчаць алеі і каналы, знаёміцца з гісторыяй парку. Дакладная дата і дэталі з'явяцца ў нашых сацсетках.</span>
+      </p>
+      <div class="upcoming__actions">
+        <a href="https://t.me/alba_poselok_nesvisz" target="_blank" class="btn btn--light">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.008 9.454c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L6.26 14.4l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.556.186z"/></svg>
+          <span class="lang-content active" data-lang="ru">Следить в Telegram</span>
+          <span class="lang-content" data-lang="be">Сачыць у Telegram</span>
+        </a>
+        <a href="https://www.instagram.com/alba_neswizh/" target="_blank" class="btn btn--outline-light">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          <span class="lang-content active" data-lang="ru">Следить в Instagram</span>
+          <span class="lang-content" data-lang="be">Сачыць у Instagram</span>
+        </a>
+      </div>
+    </div>
+    <div class="upcoming__img-wrap">
+      <img class="upcoming__img"
+        src="https://raw.githubusercontent.com/Stas0889/alba/main/img/canal-spring-reflection.jpg"
+        alt="Канал парка Альба весной — отражение деревьев в воде">
+      <p class="upcoming__img-note">
+        <span class="lang-content active" data-lang="ru">Канал парка Альба весной</span>
+        <span class="lang-content" data-lang="be">Канал парку Альба вясной</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT TO EXPECT -->
+<section class="expect">
+  <div class="expect__inner">
+    <p class="expect__eyebrow">
+      <span class="lang-content active" data-lang="ru">Как проходит субботник</span>
+      <span class="lang-content" data-lang="be">Як праходзіць суботнік</span>
+    </p>
+    <h2 class="expect__title">
+      <span class="lang-content active" data-lang="ru">Что вас ждёт</span>
+      <span class="lang-content" data-lang="be">Што вас чакае</span>
+    </h2>
+    <div class="expect__grid">
+      <div class="expect__item">
+        <div class="expect__num">11:00</div>
+        <div class="expect__heading">
+          <span class="lang-content active" data-lang="ru">Сбор у дуба</span>
+          <span class="lang-content" data-lang="be">Збор каля дуба</span>
+        </div>
+        <p class="expect__text">
+          <span class="lang-content active" data-lang="ru">Встречаемся у самого большого дуба парка. Знакомство, краткая история Альбы, распределение по командам.</span>
+          <span class="lang-content" data-lang="be">Сустракаемся каля самага вялікага дуба парку. Знаёмства, кароткая гісторыя Альбы, размеркаванне па камандах.</span>
+        </p>
+      </div>
+      <div class="expect__item">
+        <div class="expect__num">~3 ч</div>
+        <div class="expect__heading">
+          <span class="lang-content active" data-lang="ru">Работа в парке</span>
+          <span class="lang-content" data-lang="be">Праца ў парку</span>
+        </div>
+        <p class="expect__text">
+          <span class="lang-content active" data-lang="ru">Расчистка аллей, каналов, уборка мусора. Перчатки и мешки предоставляем. Можно брать свои резиновые сапоги.</span>
+          <span class="lang-content" data-lang="be">Расчыстка алей, каналаў, уборка смецця. Пальчаткі і мяшкі прадастаўляем. Можна браць свае гумовыя боты.</span>
+        </p>
+      </div>
+      <div class="expect__item">
+        <div class="expect__num">Итог</div>
+        <div class="expect__heading">
+          <span class="lang-content active" data-lang="ru">Чай и итоги</span>
+          <span class="lang-content" data-lang="be">Чай і вынікі</span>
+        </div>
+        <p class="expect__text">
+          <span class="lang-content active" data-lang="ru">Собираемся на полянке, подводим итоги, угощение. Возьмите свою кружку — мы за минимум отходов.</span>
+          <span class="lang-content" data-lang="be">Збіраемся на паляне, падводзім вынікі, пачастунак. Вазьміце сваю кружку — мы за мінімум адходаў.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHIVE -->
+<section class="archive">
+  <div class="archive__inner">
+    <p class="archive__eyebrow">
+      <span class="lang-content active" data-lang="ru">Архив событий</span>
+      <span class="lang-content" data-lang="be">Архіў падзей</span>
+    </p>
+    <h2 class="archive__title">
+      <span class="lang-content active" data-lang="ru">Что мы уже сделали</span>
+      <span class="lang-content" data-lang="be">Што мы ўжо зрабілі</span>
+    </h2>
+
+    <!-- EVENT: April 2026 -->
+    <div class="event-card">
+      <div class="event-card__grid">
+        <img class="event-card__img"
+          src="https://raw.githubusercontent.com/Stas0889/alba/main/img/canal-early-spring.jpg"
+          alt="Канал парка Альба ранней весной — исследовательский субботник апрель 2026">
+        <div class="event-card__body">
+          <div class="event-card__meta">
+            <span class="event-card__tag event-card__tag--past">
+              <span class="lang-content active" data-lang="ru">Прошедшее</span>
+              <span class="lang-content" data-lang="be">Мінулае</span>
+            </span>
+            <span class="event-card__tag event-card__tag--type">
+              <span class="lang-content active" data-lang="ru">Исследовательский субботник</span>
+              <span class="lang-content" data-lang="be">Даследчы суботнік</span>
+            </span>
+          </div>
+          <div class="event-card__date">18 апреля 2026</div>
+          <h3 class="event-card__title">
+            <span class="lang-content active" data-lang="ru">Исследовательский субботник при поддержке Клецкого Лесхоза</span>
+            <span class="lang-content" data-lang="be">Даследчы суботнік пры падтрымцы Клецкага Лясгасу</span>
+          </h3>
+          <p class="event-card__text">
+            <span class="lang-content active" data-lang="ru">Первый субботник с особой миссией — не только уборка, но и изучение проблем лесопарка. Вместе с экспертами составляли план восстановления Альбы. Расчистили сектор леса у рыбхоза, провели уборку водоёма Альтана. По итогам — онлайн-конференция с экспертами и разработка дорожной карты восстановления парка.</span>
+            <span class="lang-content" data-lang="be">Першы суботнік з асаблівай місіяй — не толькі ўборка, але і вывучэнне праблем лесапарку. Разам з экспертамі складалі план аднаўлення Альбы. Расчысцілі сектар лесу каля рыбгасу, правялі ўборку вадаёма Альтана.</span>
+          </p>
+          <div class="event-card__photos">
+            <div class="event-card__photo">
+              <img src="https://raw.githubusercontent.com/Stas0889/alba/main/img/canal-spring-reflection.jpg"
+                alt="Канал парка Альба весной — субботник апрель 2026">
+            </div>
+            <div class="event-card__photo">
+              <img src="https://raw.githubusercontent.com/Stas0889/alba/main/img/oak-tree-summer.jpg"
+                alt="Вековой дуб парка Альба — место сбора участников субботника">
+            </div>
+            <div class="event-card__photo">
+              <img src="https://raw.githubusercontent.com/Stas0889/alba/main/img/canal-early-spring.jpg"
+                alt="Канал Альбы ранней весной — вид после расчистки">
+            </div>
+          </div>
+          <div class="event-card__stats">
+            <div>
+              <div class="event-card__stat-num">~30</div>
+              <div class="event-card__stat-label">
+                <span class="lang-content active" data-lang="ru">участников</span>
+                <span class="lang-content" data-lang="be">удзельнікаў</span>
+              </div>
+            </div>
+            <div>
+              <div class="event-card__stat-num">3 ч</div>
+              <div class="event-card__stat-label">
+                <span class="lang-content active" data-lang="ru">работы</span>
+                <span class="lang-content" data-lang="be">працы</span>
+              </div>
+            </div>
+            <div>
+              <div class="event-card__stat-num">1</div>
+              <div class="event-card__stat-label">
+                <span class="lang-content active" data-lang="ru">план восстановления</span>
+                <span class="lang-content" data-lang="be">план аднаўлення</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script src="footer.js"></script>
+<script>
+function setLang(lang) {
+  document.querySelectorAll('.lang-content').forEach(el => el.classList.toggle('active', el.dataset.lang === lang));
+  document.querySelectorAll('.nav__lang button, .mob-menu__lang button').forEach(b => {
+    b.classList.toggle('active', b.textContent.trim() === lang.toUpperCase() || (lang==='ru' && b.textContent.includes('Русский')) || (lang==='be' && b.textContent.includes('Беларускі')));
+  });
+  localStorage.setItem('alba-lang', lang);
+}
+const savedLang = localStorage.getItem('alba-lang');
+if (savedLang && savedLang !== 'ru') setLang(savedLang);
+</script>
+</body>
+</html>
