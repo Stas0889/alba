@@ -1,6 +1,7 @@
 (function() {
   // Determine base path (for pages in subdirectories if needed)
   const base = '';
+  const SITE_ORIGIN = 'https://nesvizh-alba.by/';
 
   // CSS for nav and mobile menu
   const style = document.createElement('style');
@@ -46,7 +47,8 @@
 
   function navLink(href, ru, be) {
     const active = currentPage === href ? ' class="active"' : '';
-    return `<li><a href="${href}"${active}>
+    const url = href === 'index.html' ? SITE_ORIGIN : SITE_ORIGIN + href;
+    return `<li><a href="${url}"${active}>
       <span class="lang-content active" data-lang="ru">${ru}</span>
       <span class="lang-content" data-lang="be">${be}</span>
     </a></li>`;
@@ -54,7 +56,8 @@
 
   function mobLink(href, ru, be) {
     const active = currentPage === href ? ' class="active"' : '';
-    return `<a href="${href}"${active}>
+    const url = href === 'index.html' ? SITE_ORIGIN : SITE_ORIGIN + href;
+    return `<a href="${url}"${active}>
       <span class="lang-content active" data-lang="ru">${ru}</span>
       <span class="lang-content" data-lang="be">${be}</span>
     </a>`;
@@ -63,7 +66,7 @@
   // Navbar HTML
   const navHTML = `
 <nav class="nav">
-  <a href="index.html" class="nav__logo" aria-label="Альба — на главную" title="Альба" onclick="window.location.href='index.html'; return false;">
+  <a href="https://nesvizh-alba.by/" class="nav__logo" aria-label="Альба — на главную" title="Альба" onclick="window.location.href='https://nesvizh-alba.by/'; return false;">
     <img src="logo.png" alt="Альба логотип">
   </a>
   <ul class="nav__links">
