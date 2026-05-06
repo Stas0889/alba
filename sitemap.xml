@@ -5,27 +5,27 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://nesvizh-alba.by/history.html</loc>
+    <loc>https://nesvizh-alba.by/history/</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://nesvizh-alba.by/hidden-nesvizh.html</loc>
+    <loc>https://nesvizh-alba.by/hidden-nesvizh/</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nesvizh-alba.by/how-to-get.html</loc>
+    <loc>https://nesvizh-alba.by/how-to-get/</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nesvizh-alba.by/volunteer.html</loc>
+    <loc>https://nesvizh-alba.by/volunteer/</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://nesvizh-alba.by/events.html</loc>
+    <loc>https://nesvizh-alba.by/events/</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://nesvizh-alba.by/gallery.html</loc>
+    <loc>https://nesvizh-alba.by/gallery/</loc>
     <priority>0.7</priority>
   </url>
 </urlset>

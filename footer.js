@@ -40,10 +40,10 @@
         </p>
         <ul class="footer__links">
           <li><a href="https://nesvizh-alba.by/"><span class="lang-content active" data-lang="ru">Главная</span><span class="lang-content" data-lang="be">Галоўная</span></a></li>
-          <li><a href="https://nesvizh-alba.by/history.html"><span class="lang-content active" data-lang="ru">История</span><span class="lang-content" data-lang="be">Гісторыя</span></a></li>
-          <li><a href="https://nesvizh-alba.by/hidden-nesvizh.html"><span class="lang-content active" data-lang="ru">Несвиж без замка</span><span class="lang-content" data-lang="be">Нясвіж без замка</span></a></li>
-          <li><a href="https://nesvizh-alba.by/volunteer.html"><span class="lang-content active" data-lang="ru">Волонтёрам</span><span class="lang-content" data-lang="be">Валанцёрам</span></a></li>
-          <li><a href="https://nesvizh-alba.by/how-to-get.html"><span class="lang-content active" data-lang="ru">Как добраться</span><span class="lang-content" data-lang="be">Як дабрацца</span></a></li>
+          <li><a href="https://nesvizh-alba.by/history/"><span class="lang-content active" data-lang="ru">История</span><span class="lang-content" data-lang="be">Гісторыя</span></a></li>
+          <li><a href="https://nesvizh-alba.by/hidden-nesvizh/"><span class="lang-content active" data-lang="ru">Несвиж без замка</span><span class="lang-content" data-lang="be">Нясвіж без замка</span></a></li>
+          <li><a href="https://nesvizh-alba.by/volunteer/"><span class="lang-content active" data-lang="ru">Волонтёрам</span><span class="lang-content" data-lang="be">Валанцёрам</span></a></li>
+          <li><a href="https://nesvizh-alba.by/how-to-get/"><span class="lang-content active" data-lang="ru">Как добраться</span><span class="lang-content" data-lang="be">Як дабрацца</span></a></li>
         </ul>
       </div>
       <div>

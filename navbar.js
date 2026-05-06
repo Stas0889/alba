@@ -1,6 +1,4 @@
 (function() {
-  // Determine base path (for pages in subdirectories if needed)
-  const base = '';
   const SITE_ORIGIN = 'https://nesvizh-alba.by/';
 
   // CSS for nav and mobile menu
@@ -43,20 +41,21 @@
   document.head.appendChild(style);
 
   // Current page for active link
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const normalizedPath = window.location.pathname.replace(/\/+$/, '');
+  const currentPage = normalizedPath === '' || normalizedPath === '/' ? 'index' : normalizedPath.split('/').pop();
 
-  function navLink(href, ru, be) {
-    const active = currentPage === href ? ' class="active"' : '';
-    const url = href === 'index.html' ? SITE_ORIGIN : SITE_ORIGIN + href;
+  function navLink(slug, ru, be) {
+    const active = currentPage === slug ? ' class="active"' : '';
+    const url = slug === 'index' ? SITE_ORIGIN : SITE_ORIGIN + slug + '/';
     return `<li><a href="${url}"${active}>
       <span class="lang-content active" data-lang="ru">${ru}</span>
       <span class="lang-content" data-lang="be">${be}</span>
     </a></li>`;
   }
 
-  function mobLink(href, ru, be) {
-    const active = currentPage === href ? ' class="active"' : '';
-    const url = href === 'index.html' ? SITE_ORIGIN : SITE_ORIGIN + href;
+  function mobLink(slug, ru, be) {
+    const active = currentPage === slug ? ' class="active"' : '';
+    const url = slug === 'index' ? SITE_ORIGIN : SITE_ORIGIN + slug + '/';
     return `<a href="${url}"${active}>
       <span class="lang-content active" data-lang="ru">${ru}</span>
       <span class="lang-content" data-lang="be">${be}</span>
@@ -70,12 +69,12 @@
     <img src="logo.png" alt="Альба логотип">
   </a>
   <ul class="nav__links">
-    ${navLink('history.html', 'История', 'Гісторыя')}
-    ${navLink('hidden-nesvizh.html', 'Несвиж без замка', 'Нясвіж без замка')}
-    ${navLink('gallery.html', 'Галерея', 'Галерэя')}
-    ${navLink('events.html', 'События', 'Падзеі')}
-    ${navLink('volunteer.html', 'Волонтёрам', 'Валанцёрам')}
-    ${navLink('how-to-get.html', 'Как добраться', 'Як дабрацца')}
+    ${navLink('history', 'История', 'Гісторыя')}
+    ${navLink('hidden-nesvizh', 'Несвиж без замка', 'Нясвіж без замка')}
+    ${navLink('gallery', 'Галерея', 'Галерэя')}
+    ${navLink('events', 'События', 'Падзеі')}
+    ${navLink('volunteer', 'Волонтёрам', 'Валанцёрам')}
+    ${navLink('how-to-get', 'Как добраться', 'Як дабрацца')}
   </ul>
   <div style="display:flex;align-items:center;gap:.75rem;">
     <div class="nav__lang">
@@ -90,13 +89,13 @@
 
 <div id="mob-menu" class="mob-menu">
   <nav class="mob-menu__links">
-    ${mobLink('index.html', 'Главная', 'Галоўная')}
-    ${mobLink('history.html', 'История', 'Гісторыя')}
-    ${mobLink('hidden-nesvizh.html', 'Несвиж без замка', 'Нясвіж без замка')}
-    ${mobLink('gallery.html', 'Галерея', 'Галерэя')}
-    ${mobLink('events.html', 'События', 'Падзеі')}
-    ${mobLink('volunteer.html', 'Волонтёрам', 'Валанцёрам')}
-    ${mobLink('how-to-get.html', 'Как добраться', 'Як дабрацца')}
+    ${mobLink('index', 'Главная', 'Галоўная')}
+    ${mobLink('history', 'История', 'Гісторыя')}
+    ${mobLink('hidden-nesvizh', 'Несвиж без замка', 'Нясвіж без замка')}
+    ${mobLink('gallery', 'Галерея', 'Галерэя')}
+    ${mobLink('events', 'События', 'Падзеі')}
+    ${mobLink('volunteer', 'Волонтёрам', 'Валанцёрам')}
+    ${mobLink('how-to-get', 'Как добраться', 'Як дабрацца')}
   </nav>
   <div class="mob-menu__bottom">
     <div class="mob-menu__contacts">
