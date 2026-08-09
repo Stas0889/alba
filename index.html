@@ -454,6 +454,36 @@ document.querySelectorAll('.facts__card,.history__item,.volunteer__way,.stats__i
 const _sl=localStorage.getItem('alba-lang');if(_sl&&_sl!=='ru')setLang(_sl);
 
 </script>
+<nav class="page-links" aria-label="Основные разделы сайта">
+  <div class="page-links__inner">
+    <p class="page-links__title">
+      <span class="lang-content active" data-lang="ru">Познакомьтесь с Альбой</span>
+      <span class="lang-content" data-lang="be">Пазнаёмцеся з Альбай</span>
+    </p>
+    <div class="page-links__list">
+      <a href="https://nesvizh-alba.by/history/"><span class="lang-content active" data-lang="ru">История</span><span class="lang-content" data-lang="be">Гісторыя</span></a>
+      <a href="https://nesvizh-alba.by/hidden-nesvizh/"><span class="lang-content active" data-lang="ru">Несвиж без замка</span><span class="lang-content" data-lang="be">Нясвіж без замка</span></a>
+      <a href="https://nesvizh-alba.by/gallery/"><span class="lang-content active" data-lang="ru">Галерея</span><span class="lang-content" data-lang="be">Галерэя</span></a>
+      <a href="https://nesvizh-alba.by/events/"><span class="lang-content active" data-lang="ru">События</span><span class="lang-content" data-lang="be">Падзеі</span></a>
+      <a href="https://nesvizh-alba.by/volunteer/"><span class="lang-content active" data-lang="ru">Волонтёрам</span><span class="lang-content" data-lang="be">Валанцёрам</span></a>
+      <a href="https://nesvizh-alba.by/how-to-get/"><span class="lang-content active" data-lang="ru">Как добраться</span><span class="lang-content" data-lang="be">Як дабрацца</span></a>
+    </div>
+  </div>
+</nav>
+<style>
+.page-links { padding: 2.25rem 2.5rem; background: var(--card-bg); border-top: 1px solid var(--border); }
+.page-links__inner { max-width: 1100px; margin: 0 auto; }
+.page-links__title { font-family: 'Arkhip', sans-serif; color: var(--green); font-size: 1rem; margin-bottom: 1rem; }
+.page-links__list { display: flex; flex-wrap: wrap; gap: .65rem; }
+.page-links__list a { display: inline-flex; align-items: center; min-height: 40px; padding: .55rem 1rem; border: 1px solid var(--border); border-radius: 5px; color: var(--muted); background: var(--bg); text-decoration: none; font-size: .82rem; transition: color .2s, border-color .2s, background .2s; }
+.page-links__list a:hover { color: var(--green); border-color: var(--green); background: #fff; }
+@media (max-width: 768px) {
+  .page-links { padding: 2rem 1.25rem; }
+  .page-links__list { display: grid; grid-template-columns: 1fr 1fr; }
+  .page-links__list a { justify-content: center; text-align: center; }
+}
+@media (max-width: 420px) { .page-links__list { grid-template-columns: 1fr; } }
+</style>
 <script src="footer.js"></script>
 </body>
 </html>
